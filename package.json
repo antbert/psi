@@ -6,6 +6,11 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
+  "dependencies": {
+    "browserify":"9.0.3"
+  },
+
   "repository": {
     "type": "git",
     "url": "https://github.com/Atsman/pseudointerview.git"
