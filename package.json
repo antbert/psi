@@ -18,6 +18,7 @@
     "grunt": "latest",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-browserify": "latest",
     "grunt-postcss": "^0.2.0"
   },
 
