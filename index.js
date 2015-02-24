@@ -1,1 +1,5 @@
-console.log('hello');
+/* @flow */
+
+function test(a) {
+  
+}

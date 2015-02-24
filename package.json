@@ -15,10 +15,12 @@
     "type": "git",
     "url": "https://github.com/Atsman/pseudointerview.git"
   },
+
   "keywords": [
     "node",
     "js"
   ],
+
   "author": "Aleh Atsman, Aliksey Vakulich",
   "license": "ISC",
   "bugs": {
