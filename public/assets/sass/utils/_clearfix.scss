@@ -2,7 +2,6 @@
 // .wrapper {
 //   @include clearfix;
 // }
-
 @mixin clearfix {
   &::after {
     clear: both;
