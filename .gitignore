@@ -6,8 +6,9 @@ logs
 pids
 *.pid
 *.seed
-.sass-cache
 
+# Compiled asssets
+.sass-cache
 public/js
 public/stylesheets
 
