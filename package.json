@@ -8,7 +8,13 @@
   },
 
   "dependencies": {
-    "browserify":"9.0.3"
+    "browserify":"9.0.3",
+    "autoprefixer-core": "^4.0.2",
+    "csswring": "^2.0.0",
+    "grunt": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-postcss": "^0.2.0"
   },
 
   "repository": {
