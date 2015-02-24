@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                 ]
             },
             dist: {
-                src: 'stylesheets/*.css'
+                src: 'public/stylesheets/*.css'
             }
         },
 
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'stylesheets/style.css': 'sass/style.scss'
+                    'public/stylesheets/style.css': 'assets/sass/style.scss'
                 }
             }
         },
@@ -43,6 +43,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
 
     grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['sass', 'postcss']);
 
 };
 

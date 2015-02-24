@@ -1,5 +1,1 @@
-/* @flow */
-
-function test(a) {
-  
-}
+console.log("hello world");
