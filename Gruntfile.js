@@ -77,6 +77,13 @@ module.exports = function initGrunt(grunt) {
         files: CLIENT_JS_FILES,
         tasks: ['browserify']
       }
+    },
+
+    githooks: {
+      all: {
+        // Will run the jshint and test:unit tasks at every commit
+        'pre-commit': 'jshint jscs',
+      }
     }
   });
 
@@ -86,6 +93,7 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
+  grunt.loadNpmTasks('grunt-githooks');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
