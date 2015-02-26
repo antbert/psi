@@ -1,3 +1,7 @@
-module.exports = function summ(a, b) {
+/* @flow weak */
+
+function summ(a, b) {
   return a + b;
-};
+}
+
+module.exports = summ;

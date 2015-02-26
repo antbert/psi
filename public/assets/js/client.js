@@ -1,6 +1,9 @@
-var chai = require('chai');
+/* @flow */
 
-var expect = chai.expect;
+function summ(a) {
+  return a * 10;
+}
 
-expect('s').to.be.a('string');
-expect(12).to.be.a('number');
+summ('3');
+
+module.exports = summ;
