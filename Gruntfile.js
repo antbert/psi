@@ -1,4 +1,4 @@
-const SERVER_JS_FILES = ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js'];
+const SERVER_JS_FILES = ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', 'app.js'];
 const CLIENT_JS_FILES = ['public/assets/**/*.js'];
 const ALL_JS_FILES = SERVER_JS_FILES.concat(CLIENT_JS_FILES);
 

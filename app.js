@@ -65,5 +65,4 @@ app.use(function prodErrorHandler(err, req, res, next) {
   });
 });
 
-
 module.exports = app;
