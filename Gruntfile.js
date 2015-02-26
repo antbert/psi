@@ -45,6 +45,17 @@ module.exports = function(grunt) {
           all: ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', 'public/assets/**/*.js']
       },
 
+      jscs: {
+        all: {
+          options: {
+            config: '.jscs'
+          },
+          files: {
+            src: ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', 'public/assets/**/*.js']
+          }
+        }
+      },
+
       watch: {
           postcss: {
               files: ['**/*.css'],
@@ -62,6 +73,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jscs');
 
 
   grunt.registerTask('default', ['watch']);
