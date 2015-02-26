@@ -3,7 +3,6 @@ const CLIENT_JS_FILES = ['public/assets/**/*.js'];
 const ALL_JS_FILES = SERVER_JS_FILES.concat(CLIENT_JS_FILES);
 
 module.exports = function initGrunt(grunt) {
-
   grunt.initConfig({
     postcss: {
       options: {
@@ -97,7 +96,6 @@ module.exports = function initGrunt(grunt) {
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
-
 };
 
 /* need
