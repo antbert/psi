@@ -4,15 +4,24 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var exphbs  = require('express-handlebars');
 
 var routes = require('./app/routes/index');
 var users = require('./app/routes/users');
 
 var app = express();
+const VIEW_FOLDER = 'app/views';
 
 // view engine setup
-app.set('views', path.join(__dirname, 'app/views'));
-app.set('view engine', 'hjs');
+app.engine('handlebars', exphbs(
+    {
+        defaultLayout: 'main',
+        layoutsDir: VIEW_FOLDER + '/layouts',
+        partialsDir: VIEW_FOLDER + '/partials'
+    }
+));
+app.set('views', path.join(__dirname, VIEW_FOLDER));
+app.set('view engine', 'handlebars');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
