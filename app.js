@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var exphbs  = require('express-handlebars');
+var exphbs = require('express-handlebars');
 
 var routes = require('./app/routes/index');
 var users = require('./app/routes/users');
@@ -13,13 +13,11 @@ var app = express();
 const VIEW_FOLDER = 'app/views';
 
 // view engine setup
-app.engine('handlebars', exphbs(
-    {
-        defaultLayout: 'main',
-        layoutsDir: VIEW_FOLDER + '/layouts',
-        partialsDir: VIEW_FOLDER + '/partials'
-    }
-));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  layoutsDir: VIEW_FOLDER + '/layouts',
+  partialsDir: VIEW_FOLDER + '/partials'
+}));
 app.set('views', path.join(__dirname, VIEW_FOLDER));
 app.set('view engine', 'handlebars');
 
@@ -37,7 +35,7 @@ app.use('/', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function notFoundErrorHandler(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
@@ -48,7 +46,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use(function devErrorHandler(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -59,7 +57,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function prodErrorHandler(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

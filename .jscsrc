@@ -1,0 +1,16 @@
+{
+  "disallowAnonymousFunctions": true,
+  "disallowDanglingUnderscores": {
+    "allExcept": ["_exception"]
+  },
+  "disallowEmptyBlocks": true,
+  "disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"],
+  "disallowKeywordsOnNewLine": [
+    "else",
+    "catch"
+  ],
+  "disallowMixedSpacesAndTabs": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowMultipleVarDecl": true,
+  "disallowNewlineBeforeBlockStatements": true
+}
