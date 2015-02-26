@@ -38,6 +38,13 @@ module.exports = function(grunt) {
         }
       },
 
+      jshint: {
+          options: {
+            jshintrc: true
+          },
+          all: ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', 'public/assets/**/*.js']
+      },
+
       watch: {
           postcss: {
               files: ['**/*.css'],
@@ -54,6 +61,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
