@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function initGrunt(grunt) {
 
   grunt.initConfig({
       postcss: {
@@ -74,7 +74,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
-
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
