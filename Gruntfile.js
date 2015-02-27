@@ -1,3 +1,4 @@
+
 const SERVER_JS_FILES = ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', 'app.js'];
 const CLIENT_JS_FILES = ['public/assets/**/*.js'];
 const ALL_JS_FILES = SERVER_JS_FILES.concat(CLIENT_JS_FILES);
@@ -70,12 +71,21 @@ module.exports = function initGrunt(grunt) {
       },
       js: {
         files: ALL_JS_FILES,
-        tasks: ['jshint', 'jscs', 'mochaTest']
+        tasks: ['concurrent:jsQuality']
       },
       clientJs: {
         files: CLIENT_JS_FILES,
         tasks: ['browserify']
       }
+    },
+
+    concurrent: {
+        jsQuality: {
+            tasks: ['jshint', 'jscs', 'mochaTest'],
+            options: {
+                logConcurrentOutput: false
+            }
+        }
     },
 
     githooks: {
@@ -105,9 +115,11 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
   grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
+  grunt.registerTask('jsQuality', ['concurrent:jsQuality']);
 };
 
 /* need
