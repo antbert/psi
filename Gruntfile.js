@@ -97,11 +97,3 @@ module.exports = function initGrunt(grunt) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
 };
-
-/* need
-autoprefixer-core
-csswring
-grunt
-grunt-contrib-watch
-grunt-postcss
-*/
