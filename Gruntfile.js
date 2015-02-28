@@ -70,7 +70,7 @@ module.exports = function initGrunt(grunt) {
       },
       js: {
         files: ALL_JS_FILES,
-        tasks: ['jshint', 'jscs']
+        tasks: ['jshint', 'jscs', 'mochaTest']
       },
       clientJs: {
         files: CLIENT_JS_FILES,
@@ -83,6 +83,17 @@ module.exports = function initGrunt(grunt) {
         // Will run the jshint and test:unit tasks at every commit
         'pre-commit': 'jshint jscs',
       }
+    },
+
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          quiet: false, // Optionally suppress output to standard out (defaults to false) 
+          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false) 
+        },
+        src: ['tests/**/*.js']
+      }
     }
   });
 
@@ -93,6 +104,7 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
