@@ -121,11 +121,3 @@ module.exports = function initGrunt(grunt) {
   grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
   grunt.registerTask('jsQuality', ['concurrent:jsQuality']);
 };
-
-/* need
-autoprefixer-core
-csswring
-grunt
-grunt-contrib-watch
-grunt-postcss
-*/
