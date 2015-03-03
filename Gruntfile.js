@@ -18,7 +18,7 @@ module.exports = function initGrunt(grunt) {
         ]
       },
       dist: {
-        src: 'public/stylesheets/*.css'
+        src: 'app/client/styles/*.css'
       }
     },
 
