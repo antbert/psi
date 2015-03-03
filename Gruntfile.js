@@ -1,8 +1,11 @@
 
-const SERVER_JS_FILES = ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', 'app.js'];
-const CLIENT_JS_FILES = ['public/assets/**/*.js'];
-const ALL_JS_FILES = SERVER_JS_FILES.concat(CLIENT_JS_FILES);
-
+const TEST_FILES = 'app/test/**/*.js';
+const JS_FILES = [
+  'Gruntfile.js', 
+  'app/client/**/*.js', 
+  'app/server/**/*.js',
+  TEST_FILES
+];
 module.exports = function initGrunt(grunt) {
   grunt.initConfig({
     postcss: {
@@ -25,20 +28,8 @@ module.exports = function initGrunt(grunt) {
           sourcemap: 'auto'
         },
         files: {
-          'public/stylesheets/style.css': 'public/assets/sass/style.scss'
+          'app/client/styles/style.css': 'app/client/sass/style.scss'
         }
-      }
-    },
-
-    browserify: {
-      main: {
-        options: {
-          browserifyOptions: {
-            debug: true
-          }
-        },
-        src: CLIENT_JS_FILES,
-        dest: 'public/js/index.js'
       }
     },
 
@@ -46,7 +37,7 @@ module.exports = function initGrunt(grunt) {
       options: {
         jshintrc: true
       },
-      all: ALL_JS_FILES
+      all: JS_FILES
     },
 
     jscs: {
@@ -55,7 +46,7 @@ module.exports = function initGrunt(grunt) {
           config: '.jscsrc'
         },
         files: {
-          src: ALL_JS_FILES
+          src: JS_FILES
         }
       }
     },
@@ -70,12 +61,8 @@ module.exports = function initGrunt(grunt) {
         tasks: ['sass']
       },
       js: {
-        files: ALL_JS_FILES,
+        files: JS_FILES,
         tasks: ['concurrent:jsQuality']
-      },
-      clientJs: {
-        files: CLIENT_JS_FILES,
-        tasks: ['browserify']
       }
     },
 
@@ -90,8 +77,7 @@ module.exports = function initGrunt(grunt) {
 
     githooks: {
       all: {
-        // Will run the jshint and test:unit tasks at every commit
-        'pre-commit': 'jshint jscs',
+        'pre-commit': 'concurrent:jsQuality',
       }
     },
 
@@ -102,7 +88,7 @@ module.exports = function initGrunt(grunt) {
           quiet: false, // Optionally suppress output to standard out (defaults to false) 
           clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false) 
         },
-        src: ['tests/**/*.js']
+        src: [TEST_FILES]
       }
     }
   });
@@ -110,7 +96,6 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
@@ -118,6 +103,6 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
+  grunt.registerTask('build', ['sass', 'postcss']);
   grunt.registerTask('jsQuality', ['concurrent:jsQuality']);
 };
