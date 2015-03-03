@@ -1,4 +1,3 @@
-
 const TEST_FILES = 'app/test/**/*.js';
 const JS_FILES = [
   'Gruntfile.js', 
@@ -77,7 +76,7 @@ module.exports = function initGrunt(grunt) {
 
     githooks: {
       all: {
-        'pre-commit': 'concurrent:jsQuality',
+        'pre-commit': ''
       }
     },
 
@@ -103,6 +102,7 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('git', ['githooks']);
   grunt.registerTask('build', ['sass', 'postcss']);
   grunt.registerTask('jsQuality', ['concurrent:jsQuality']);
 };
