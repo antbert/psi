@@ -13,7 +13,6 @@ module.exports = function initGrunt(grunt) {
           require('autoprefixer-core')({
             browsers: ['last 2 version', 'ie 8', 'ie 9']
           }).postcss,
-          require('csswring').postcss
         ]
       },
       dist: {
@@ -50,44 +49,31 @@ module.exports = function initGrunt(grunt) {
       }
     },
 
-    watch: {
-      postcss: {
-        files: ['**/*.css'],
-        tasks: ['postcss']
+    scsslint: {
+      allFiles: [
+        'app/client/sass/**/*.scss',
+      ],
+      options: {
+        bundleExec: true,
+        config: '.scss-lint.yml', 
+        colorizeOutput: true
       },
+    },
+
+    watch: {
       sass: {
         files: ['**/*.{scss,sass}'],
-        tasks: ['sass']
+        tasks: ['sass', 'scsslint']
       },
       js: {
         files: JS_FILES,
-        tasks: ['concurrent:jsQuality']
+        tasks: ['jshint', 'jscs']
       }
-    },
-
-    concurrent: {
-        jsQuality: {
-            tasks: ['jshint', 'jscs', 'mochaTest'],
-            options: {
-                logConcurrentOutput: false
-            }
-        }
     },
 
     githooks: {
       all: {
         'pre-commit': ''
-      }
-    },
-
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec',
-          quiet: false, // Optionally suppress output to standard out (defaults to false) 
-          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false) 
-        },
-        src: [TEST_FILES]
       }
     }
   });
@@ -98,11 +84,9 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
-  grunt.loadNpmTasks('grunt-mocha-test');
-  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-scss-lint');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('git', ['githooks']);
   grunt.registerTask('build', ['sass', 'postcss']);
   grunt.registerTask('jsQuality', ['concurrent:jsQuality']);
 };
