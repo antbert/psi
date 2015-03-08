@@ -98,7 +98,9 @@ $btn-font-color: #fff;
 }
 
 .btn-info {
-  background-color: $info-btn-color;
+  background: linear-gradient(135deg, rgba(3, 170, 244, 1) 50%,
+                                      rgba(41, 137, 216, 1) 50%,
+                                      rgba(4, 174, 245, 1) 50%);
   color: $btn-font-color;
 
   &:hover {
