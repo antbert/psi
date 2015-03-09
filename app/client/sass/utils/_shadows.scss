@@ -33,7 +33,6 @@
   $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
   @return 0 $primary-offset $blur $color;
 }
-/*
--------Usage------
-@include card(2 - 1);
-*/
+
+//-------Usage------
+//@include card(2 - 1);
