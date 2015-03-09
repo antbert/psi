@@ -1,7 +1,7 @@
 // imports
 @import '../utils/fontUtils';
 // variables
-$primary-font: 'Calibri', sans-serif;
+$primary-font: 'Calibri', 'robotoregular', sans-serif;
 $secondary-font: 'Roboto', sans-serif;
 $primary-font-color: #000;
 
@@ -67,4 +67,18 @@ h2 {
   @include font-size(14px);
   color: lighten($primary-font-color, 46%);
   font-weight: 500;
+}
+
+.form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  outline: none;
+  padding-left: 0;
 }

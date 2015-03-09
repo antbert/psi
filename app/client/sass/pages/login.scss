@@ -2,81 +2,96 @@
 @import '../utils/index';
 
 // variables
-
-.login {
-  position: relative;
-}
-
-.shape2 {
-  display: inline-block;
-  left: 114px;
-  position: relative;
-  top: -35px;
-}
+$form-container-bg-color: #fff;
+$submit-btn-container-color: #118b7e;
+$submit-btn-color: #fff;
 
 .form-container {
-  background-color: #fff;
+  background-color: $form-container-bg-color;
   opacity: .8;
+  position: relative;
+  width: 300px;
+
+  &:after {
+    border-left: 0 solid transparent;
+    border-right: 90px solid transparent;
+    border-top: 50px solid $form-container-bg-color;
+    content: '';
+    height: 0;
+    margin-left: 24px;
+    position: absolute;
+    width: 0;
+  }
+}
+
+.auth-form-body {
+  padding: 35px 50px;
+}
+
+.input-block {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .btn-container {
-  background-color: #fff;
+  background-color: $submit-btn-container-color;
+  float: right;
+  margin-top: 20px;
   opacity: .8;
-  padding: 1.52em 3.22em;
+  width: 185px;
+
+  &:after {
+    border-left: 71px solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 42px solid $submit-btn-container-color;
+    content: '';
+    height: 0;
+    margin-left: 94px;
+    position: absolute;
+    width: 0;
+  }
 }
 
 .forgot-pass {
   @include font-size(14px);
-}
+  color: rgba(0, 0, 0, .5);
 
-.form {
-  padding: 1.7em 3.3em;
-}
-
-.form input {
-  border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  margin-bottom: 10px;
-  outline: none;
-  padding: .3em 2em;
-  padding-left: 0;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .login-button {
-  @include font-size(25px);
-  color: #000;
+  @include font-size(24px);
+  color: $submit-btn-color;
+  padding: 25px 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.rectangle {
-  background: #f00;
-  height: 100px;
-  width: 200px;
-}
-
-.triangle-down {
-  border-left: 0 solid transparent;
-  border-right: 90px solid transparent;
-  border-top: 50px solid #fff;
-  height: 0;
-  margin-left: 24px;
-  opacity: .8;
-  width: 0;
-}
-
-.tr-down {
-  border-left: 71px solid transparent;
-  border-right: 0 solid transparent;
-  border-top: 42px solid #fff;
-  height: 0;
-  margin-left: 95px;
-  opacity: .8;
-  width: 0;
-}
-
-.rect a {
-  color: #fff;
+.social-btns {
+  @include clearfix();
   display: inline-block;
-  padding: 1em;
-  text-decoration: none;
+  margin-left: 45px;
+  vertical-align: middle;
+}
+
+.facebook-ico {
+  background: url('../images/facebook.svg');
+  background-size: cover;
+  display: block;
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+
+.google-ico {
+  background: url('../images/google.svg');
+  background-size: cover;
+  display: block;
+  float: left;
+  height: 20px;
+  margin-left: 10px;
+  width: 20px;
 }
