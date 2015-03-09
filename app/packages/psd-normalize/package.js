@@ -11,7 +11,6 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('0.1.7');
   api.addFiles('normalize.js');
 });
 
