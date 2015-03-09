@@ -1,0 +1,82 @@
+// imports
+@import '../utils/index';
+
+// variables
+
+.login {
+  position: relative;
+}
+
+.shape2 {
+  display: inline-block;
+  left: 114px;
+  position: relative;
+  top: -35px;
+}
+
+.form-container {
+  background-color: #fff;
+  opacity: .8;
+}
+
+.btn-container {
+  background-color: #fff;
+  opacity: .8;
+  padding: 1.52em 3.22em;
+}
+
+.forgot-pass {
+  @include font-size(14px);
+}
+
+.form {
+  padding: 1.7em 3.3em;
+}
+
+.form input {
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin-bottom: 10px;
+  outline: none;
+  padding: .3em 2em;
+  padding-left: 0;
+}
+
+.login-button {
+  @include font-size(25px);
+  color: #000;
+  text-transform: uppercase;
+}
+
+.rectangle {
+  background: #f00;
+  height: 100px;
+  width: 200px;
+}
+
+.triangle-down {
+  border-left: 0 solid transparent;
+  border-right: 90px solid transparent;
+  border-top: 50px solid #fff;
+  height: 0;
+  margin-left: 24px;
+  opacity: .8;
+  width: 0;
+}
+
+.tr-down {
+  border-left: 71px solid transparent;
+  border-right: 0 solid transparent;
+  border-top: 42px solid #fff;
+  height: 0;
+  margin-left: 95px;
+  opacity: .8;
+  width: 0;
+}
+
+.rect a {
+  color: #fff;
+  display: inline-block;
+  padding: 1em;
+  text-decoration: none;
+}
