@@ -1,46 +1,60 @@
 // imports
 @import '../utils/fontUtils';
 // variables
-$primary-font: 'Roboto', sans-serif;
+$primary-font: 'Calibri', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
 $primary-font-color: #000;
+
 html {
   box-sizing: border-box;
 }
+
+html,
+body {
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
+
 body {
+  color: lighten($primary-font-color, 13%);
   font-family: $primary-font;
   font-size: 1em;
-  color: lighten($primary-font-color, 13%);
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
 ul {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
+
 img,
 video,
 canvas {
   max-width: 100%;
 }
+
 figure {
   height: 0;
   padding-bottom: 56.25%;
-  /* 16:9 */
   position: relative;
   width: 100%;
 }
+
 iframe {
   height: 100%;
   left: 0;
@@ -48,8 +62,9 @@ iframe {
   top: 0;
   width: 100%;
 }
+
 h2 {
   @include font-size(14px);
-  font-weight: 500;
   color: lighten($primary-font-color, 46%);
+  font-weight: 500;
 }

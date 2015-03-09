@@ -16,27 +16,24 @@ $breakpoints: ( 'small': ( min-width: 767px ), 'medium': ( min-width: 992px ), '
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
-/*
 
-------Usage------
+//------Usage------
 
-.selector {
-  color: red;
+//.selector {
+//  color: red;
 
-  @include respond-to('small') {
-    color: blue;
-  }
-}
+//  @include respond-to('small') {
+//    color: blue;
+//  }
+//}
 
-------Result------
+//------Result------
 
-.selector {
-  color: red;
-}
-@media (min-width: 767px) {
-  .selector {
-    color: blue;
-  }
-}
-
-*/
+//.selector {
+//  color: red;
+//}
+//@media (min-width: 767px) {
+//  .selector {
+//    color: blue;
+//  }
+//}
