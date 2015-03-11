@@ -1,8 +1,6 @@
 Meteor.startup(function () {
-  
-  console.log('Routes start!');
 
-  Router.route('/landing', {
+  Router.route('/', {
     name: 'customRoute',
     template: 'landing'
   });

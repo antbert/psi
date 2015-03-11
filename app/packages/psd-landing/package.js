@@ -8,11 +8,13 @@ Package.describe({
 Package.onUse(function (api) {
 
 	api.use([
-	'iron:router'
-	]);
+		'iron:router',
+		'templating'
+	], 'client');
 
 	api.addFiles('lib/routes.js');
-	api.addFiles('lib/client/templates/landing.html');
+	api.addFiles('lib/client/templates/landing.html', ['client']);
+	api.addFiles('lib/client/templates/landing.js', ['client']);
 	
 });
 
