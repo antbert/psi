@@ -13,6 +13,7 @@ module.exports = function initGrunt(grunt) {
           require('autoprefixer-core')({
             browsers: ['last 2 version', 'ie 8', 'ie 9']
           }).postcss,
+          require('csswring').postcss
         ]
       },
       dist: {
