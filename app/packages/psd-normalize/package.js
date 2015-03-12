@@ -14,12 +14,6 @@ Package.onUse(function(api) {
   api.addFiles('normalize.js');
 });
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('normalize');
-  api.addFiles('normalize-tests.js');
-});
-
 Npm.depends({
   'normalize.css': '3.0.2'
 });
