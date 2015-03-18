@@ -8,4 +8,5 @@ meteor-platform
 mike:mocha
 iron:router
 psd-normalize
-psd-landing
+psd-accounts
+psd-rtc

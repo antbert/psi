@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'psd-normalize',
+  name: 'psd-rtc',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -11,9 +11,22 @@ Package.describe({
 });
 
 Package.onUse(function onUse(api) {
-  api.addFiles('normalize.js');
+
+  api.use([
+    'iron:router',
+    'templating'
+  ], 'client');
+
+  api.addFiles('lib/routes.js');
+  api.addFiles([
+    'lib/client/templates/rtc.html',
+    'lib/client/templates/rtc.js'
+  ], ['client']);
+
 });
 
-Npm.depends({
-  'normalize.css': '3.0.2'
+Package.onTest(function onTest(api) {
+  api.use('tinytest');
+  api.use('psd-rtc');
+  api.addFiles('psd-rtc-tests.js');
 });
