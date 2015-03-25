@@ -1,0 +1,62 @@
+// variables
+$bg-color: #1b1b1b;
+$header-bg-color: #4455b7;
+$header-font-color: #fff;
+$chat-bg-color: #f5f5f5;
+
+.videocall-body {
+  background-color: $bg-color;
+}
+
+.header {
+  background-color: $header-bg-color;
+  color: $header-font-color;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.candidate-name {
+  font-weight: 100;
+  text-align: center;
+}
+
+.l-video {
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+.video-wrapper {
+  height: 500px;
+  position: relative;
+}
+
+.remote-video {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-color: red;
+}
+
+.local-video {
+  bottom: 20px;
+  height: 100px;
+  right: 20px;
+  position: absolute;
+  width: 180px;
+  background-color: #000;
+}
+
+.chat-area {
+  height: 140px;
+  overflow-y: auto;
+}
+
+.chat-wrapper {
+  background-color: $chat-bg-color;
+}
+
+.input-message {
+  height: 30px;
+  width: 100%;
+}
