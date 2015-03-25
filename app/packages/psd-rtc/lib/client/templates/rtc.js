@@ -1,54 +1,30 @@
 /**
  * Created by alehatsman on 3/14/15.
  */
-var PeerConnection = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
-var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
-var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
-navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
+Meteor.startup(function () {
+	var peer = new Peer({
+		host: 'pseudo-interview-signal.herokuapp.com', 
+		port: 80,
+		config: {'iceServers': [
+		    { url: 'stun:stun.l.google.com:19302' },
+		    { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+		],
+		secure: true
+	}});
 
-navigator.getUserMedia(
-  { audio: true, video: true },
-  gotStream,
-  function(error) { console.log(error) }
-);
+	peer.on('open', function(id) {
+	  console.log('My peer ID is: ' + id);
+	  var call = peer.call(id, navigator.getUserMedia());
+	  call.on('stream', function(stream) {
+	  // `stream` is the MediaStream of the remote peer.
+	  // Here you'd add it to an HTML video/canvas element.
+	  });
+	});
 
-function gotStream(stream) {
-  document.getElementById('callButton').style.display = 'inline-block';
-  document.getElementById('localVideo').src = URL.createObjectURL(stream);
+	peer.on('call', function(call) {
+	  // Answer the call, providing our mediaStream
+	  call.answer(navigator.getUserMedia());
+	});
 
-  pc = new PeerConnection({'iceServers': [{'url': 'stun:stun.l.google.com:19302'}]});
-  pc.addStream(stream);
-  pc.onicecandidate = gotIceCandidate;
-  pc.onaddstream = gotRemoteStream;
-}
 
-function createOffer() {
-  pc.createOffer(
-    gotLocalDescription,
-    function(error) { console.log(error) },
-    { 'mandatory': { 'OfferToReceiveAudio': true, 'OfferToReceiveVideo': true } }
-  );
-}
-
-function createAnswer() {
-  pc.createAnswer(
-    gotLocalDescription,
-    function(error) { console.log(error) },
-    { 'mandatory': { 'OfferToReceiveAudio': true, 'OfferToReceiveVideo': true } }
-  );
-}
-
-function gotIceCandidate(event){
-  if (event.candidate) {
-    sendMessage({
-      type: 'candidate',
-      label: event.candidate.sdpMLineIndex,
-      id: event.candidate.sdpMid,
-      candidate: event.candidate.candidate
-    });
-  }
-}
-
-function gotRemoteStream(event){
-  document.getElementById("remoteVideo").src = URL.createObjectURL(event.stream);
-}
+});

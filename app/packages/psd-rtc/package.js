@@ -18,7 +18,10 @@ Package.onUse(function onUse(api) {
   ], 'client');
 
   api.addFiles('lib/routes.js');
+  
   api.addFiles([
+    'lib/usermedia.js',
+    '.npm/package/node_modules/peerjs/dist/peer.js',
     'lib/client/templates/rtc.html',
     'lib/client/templates/rtc.js'
   ], ['client']);
@@ -29,4 +32,8 @@ Package.onTest(function onTest(api) {
   api.use('tinytest');
   api.use('psd-rtc');
   api.addFiles('psd-rtc-tests.js');
+});
+
+Npm.depends({
+  'peerjs': '0.3.9'
 });
