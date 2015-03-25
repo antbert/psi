@@ -2,6 +2,7 @@
 $bg-color: #1b1b1b;
 $header-font-color: #fff;
 $chat-bg-color: #f5f5f5;
+$send-btn-color: #5e6dc1;
 
 .videocall-body {
   background-color: $bg-color;
@@ -62,16 +63,73 @@ $chat-bg-color: #f5f5f5;
 }
 
 .input-message {
+  border-bottom: 0 !important;
   height: 30px;
   width: 100%;
 }
 
+.message {
+  margin-bottom: 10px;
+}
+
 .username {
-  color: #53bd5b;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
+}
+
+.candidate-color {
+  color: #53bd5b;
+}
+
+.interviewman-color {
+  color: #d5c154;
 }
 
 .message-body {
   font-size: 18px;
+}
+
+.message-time {
+  margin-right: 10px;
+}
+
+.nl-msg {
+  margin-left: 50px;
+}
+
+.input-group {
+  border-collapse: separate;
+  display: table;
+  position: relative;
+}
+
+.input-group-btn {
+  display: table-cell;
+  font-size: 0;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.chat-btn {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+
+.send-btn {
+  background-color: $send-btn-color;
+  color: #fff;
 }
