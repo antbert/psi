@@ -1,5 +1,4 @@
 Meteor.startup(function () {
-
   Router.route('/', {
     name: 'landingRoute',
     template: 'landing'
@@ -9,5 +8,4 @@ Meteor.startup(function () {
     name: 'loginRoute',
     template: 'loginForm'
   });
-
 });
