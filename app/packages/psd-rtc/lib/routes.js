@@ -5,7 +5,14 @@ Meteor.startup(function () {
 
   Router.route('/rtc', {
     name: 'rtcRoute',
-    template: 'rtc'
+    template: 'rtc',
+    onBeforeAction: function() {
+      $('body').addClass('videocall-body');
+      this.next();
+    },
+    onStop: function() {
+      $('body').removeClass('videocall-body');
+    }
   });
 
 });

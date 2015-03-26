@@ -58,7 +58,11 @@
     "_": false,               // Underscore.js
     "$": false,               // jQuery
     "Router": false,           // iron-router
-    "MochaWeb": true
+
+    "window": true,
+    "navigator": true,
+    "document": true,
+    "URL": true
   }
 
 }
