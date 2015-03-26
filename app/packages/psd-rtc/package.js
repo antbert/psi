@@ -29,9 +29,6 @@ Package.onUse(function onUse(api) {
 });
 
 Package.onTest(function onTest(api) {
-  api.use('tinytest');
-  api.use('psd-rtc');
-  api.addFiles('psd-rtc-tests.js');
 });
 
 Npm.depends({
