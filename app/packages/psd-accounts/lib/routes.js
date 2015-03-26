@@ -7,7 +7,7 @@ Meteor.startup(function () {
 
   Router.route('/login', {
     name: 'loginRoute',
-    template: 'login'
+    template: 'loginForm'
   });
 
 });

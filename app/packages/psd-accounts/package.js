@@ -15,8 +15,9 @@ Package.onUse(function (api) {
 	api.addFiles('lib/routes.js');
 	api.addFiles([
 		'lib/client/templates/landing.html',
+		'lib/client/templates/landing.js',
 		'lib/client/templates/login.html',
-		'lib/client/templates/landing.js'
+		'lib/client/templates/login.js'
 	], ['client']);
 	
 });
