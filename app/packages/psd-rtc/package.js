@@ -17,8 +17,11 @@ Package.onUse(function onUse(api) {
     'templating'
   ], 'client');
 
-  api.addFiles('lib/routes.js');
-  
+  api.addFiles([
+    'lib/hooks.js',
+    'lib/routes.js'
+  ]);
+
   api.addFiles([
     'lib/usermedia.js',
     '.npm/package/node_modules/peerjs/dist/peer.js',
