@@ -14,7 +14,7 @@ Meteor.startup(function () {
 
 	peer.on('open', function(id) {
 	  console.log('My peer ID is: ' + id);
-	  var call = peer.call(id, navigator.getUserMedia());
+	  var call = peer.call(id, navigator.getUserMedia({ audio: true, video: true }));
 	  call.on('stream', function(stream) {
 	  // `stream` is the MediaStream of the remote peer.
 	  // Here you'd add it to an HTML video/canvas element.

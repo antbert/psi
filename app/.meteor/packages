@@ -7,6 +7,6 @@
 meteor-platform
 mike:mocha
 iron:router
-psd-normalize
+psd-clientlibs
 psd-accounts
 psd-rtc
