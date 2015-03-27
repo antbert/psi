@@ -4,7 +4,6 @@
 RtcActionHooks = (function() {
   var VIDEOCALL_BODY = 'videocall-body';
   var BODY = 'body';
-
   return {
     beforeAction: function beforeAction() {
       $(BODY).addClass(VIDEOCALL_BODY);
@@ -13,5 +12,5 @@ RtcActionHooks = (function() {
     onStop: function onStop() {
       $(BODY).removeClass(VIDEOCALL_BODY);
     }
-  }
+  };
 })();

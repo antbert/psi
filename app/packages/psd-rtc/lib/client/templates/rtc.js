@@ -45,7 +45,7 @@ Meteor.startup(function () {
 		debug: 3
 	}});
 
-	var c = { audio: true };
+	var c = { audio: true, video: true };
 
 	peer.on('open', function(id) {
 	  console.log('My peer ID is: ' + id);
@@ -61,12 +61,9 @@ Meteor.startup(function () {
 
 	  call.on('stream', function(stream) {
 	  	console.log(stream);
-	  // `stream` is the MediaStream of the remote peer.
-	  // Here you'd add it to an HTML video/canvas element.
-		template.find('.remote-video');
+		var video = template.find('.remote-video');
+		video.src = URL.createObjectURL(stream);
 	  });
 	});
-
-
 
 });
