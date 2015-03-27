@@ -9,3 +9,5 @@ iron:router
 psd-clientlibs
 psd-accounts
 psd-rtc
+mike:mocha
+accounts-password

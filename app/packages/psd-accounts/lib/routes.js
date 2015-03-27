@@ -6,6 +6,11 @@ Meteor.startup(function () {
 
   Router.route('/login', {
     name: 'loginRoute',
-    template: 'loginForm'
+    template: 'loginForm',
+    onBeforeAction: function() {
+    	if(Meteor.user()) {
+    		Router.go('/rtc');
+    	}
+    }
   });
 });
