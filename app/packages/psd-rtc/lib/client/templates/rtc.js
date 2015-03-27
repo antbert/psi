@@ -1,11 +1,8 @@
 /**
  * Created by alehatsman on 3/14/15.
  */
-Meteor.startup(function () {
-	var peer = new Peer({
-		host: 'pseudo-interview-signal.herokuapp.com', 
-		port: 80,
-		config: {'iceServers': [
+
+var config = {'iceServers': [
 		    {url:'stun:stun01.sipphone.com'},
 			{url:'stun:stun.ekiga.net'},
 			{url:'stun:stun.fwdnet.net'},
@@ -43,17 +40,38 @@ Meteor.startup(function () {
 		],
 		secure: true,
 		debug: 3
-	}});
+};
 
-	var c = { audio: true, video: true };
+var c = { audio: true, video: true };
 
-	peer.on('open', function(id) {
+Template.rtc.events({
+	'click .chat-btn': function(event, template) {
+		var remoteId = template.find('.input-message').value;
+		navigator.getUserMedia(c, function(stream) {
+			localPeer.call(remoteId, stream);
+		}, function(err) {
+			console.log(err);
+		});
+		
+	}
+});
+
+Meteor.startup(function () {
+	localPeer = new Peer({
+		host: 'pseudo-interview-signal.herokuapp.com', 
+		port: 80,
+		config: config
+	});
+
+	localPeer.on('open', function(id) {
 	  console.log('My peer ID is: ' + id);
 	});
 
-	peer.on('call', function(call) {
+	localPeer.on('call', function(call) {
 	  console.log(call);
 	  navigator.getUserMedia(c, function(s) {
+	  	var local = document.getElementById('local-video');
+	  	local.src = URL.createObjectURL(s);
 	  	call.answer(s);
 	  }, function(e) {
 	  	console.log(e);
@@ -61,7 +79,7 @@ Meteor.startup(function () {
 
 	  call.on('stream', function(stream) {
 	  	console.log(stream);
-		var video = template.find('.remote-video');
+		var video = document.getElementById('remote-video');
 		video.src = URL.createObjectURL(stream);
 	  });
 	});

@@ -11,6 +11,7 @@ Meteor.startup(function () {
     	if(Meteor.user()) {
     		Router.go('/rtc');
     	}
+      this.next();
     }
   });
 });
