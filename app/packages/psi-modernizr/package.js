@@ -17,8 +17,8 @@ Package.onUse(function(api) {
   api.use([
     'templating'
   ], 'client');
-  api.addFiles(['lib/meteor.js'], ['server']);
-  api.addFiles(['lib/meteor.html'], ['client']);
+  api.addFiles(['lib/modernizr.js'], ['server']);
+  api.addFiles(['lib/modernizr.html'], ['client']);
 });
 
 /*Package.onTest(function(api) {
