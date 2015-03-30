@@ -59,10 +59,15 @@
     "$": false,               // jQuery
     "Router": false,           // iron-router
 
+    "Peer": true,
+    "Modernizr": true,
+
     "window": true,
     "navigator": true,
     "document": true,
-    "URL": true
+    "URL": true,
+
+    "RtcActionHooks": true
   }
 
 }

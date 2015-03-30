@@ -1,4 +1,4 @@
-Meteor.startup(function () {
+Meteor.startup(function() {
   Router.route('/', {
     name: 'landingRoute',
     template: 'landing'
@@ -8,9 +8,9 @@ Meteor.startup(function () {
     name: 'loginRoute',
     template: 'loginForm',
     onBeforeAction: function() {
-    	if(Meteor.user()) {
-    		Router.go('/rtc');
-    	}
+      if (Meteor.user()) {
+        Router.go('/rtc');
+      }
       this.next();
     }
   });

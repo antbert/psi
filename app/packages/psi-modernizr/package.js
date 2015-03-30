@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'psd-rtc',
+  name: 'psi-modernizr',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -10,30 +10,20 @@ Package.describe({
   documentation: 'README.md'
 });
 
-Package.onUse(function onUse(api) {
-
+Package.onUse(function(api) {
   api.use([
-    'iron:router',
+    'iron:router'
+  ]);
+  api.use([
     'templating'
   ], 'client');
-
-  api.addFiles([
-    'lib/hooks.js',
-    'lib/routes.js'
-  ]);
-
-  api.addFiles([
-    'lib/usermedia.js',
-    '.npm/package/node_modules/peerjs/dist/peer.js',
-    'lib/client/templates/rtc.html',
-    'lib/client/templates/rtc.js'
-  ], ['client']);
-
+  api.addFiles(['lib/meteor.js'], ['server']);
+  api.addFiles(['lib/meteor.html'], ['client']);
 });
 
-Package.onTest(function onTest(api) {
+Package.onTest(function(api) {
 });
 
 Npm.depends({
-  'peerjs': '0.3.9'
+  'modernizr': '3.0.0-alpha.3'
 });

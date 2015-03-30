@@ -6,8 +6,9 @@
 
 meteor-platform
 iron:router
-psd-clientlibs
-psd-accounts
-psd-rtc
 mike:mocha
 accounts-password
+psi-clientlibs
+psi-accounts
+psi-rtc
+psi-modernizr

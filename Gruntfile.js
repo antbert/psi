@@ -3,6 +3,7 @@ const JS_FILES = [
   'Gruntfile.js', 
   'app/client/**/*.js', 
   'app/server/**/*.js',
+  'app/packages/**/*.js',
   TEST_FILES
 ];
 module.exports = function initGrunt(grunt) {
