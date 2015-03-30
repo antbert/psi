@@ -1,12 +1,4 @@
 {
-    // JSHint Meteor Configuration File
-    // Match the Meteor Style Guide
-    //
-    // By @raix with contributions from @aldeed and @awatson1978
-    // Source https://github.com/raix/Meteor-jshintrc
-    //
-    // See http://jshint.com/docs/ for more details
-
     "maxerr"        : 50,       // {int} Maximum error before stopping
 
     // Enforcing
@@ -32,10 +24,10 @@
     "unused"        : true,     // true: Require all defined variables be used
     "strict"        : false,     // true: Requires all functions run in ES5 Strict Mode
     "trailing"      : true,     // true: Prohibit trailing whitespaces
-    "maxparams"     : false,    // {int} Max number of formal params allowed per function
-    "maxdepth"      : false,    // {int} Max depth of nested blocks (within functions)
+    "maxparams"     : 4,    // {int} Max number of formal params allowed per function
+    "maxdepth"      : 2,    // {int} Max depth of nested blocks (within functions)
     "maxstatements" : false,    // {int} Max number statements per function
-    "maxcomplexity" : false,    // {int} Max cyclomatic complexity per function
+    "maxcomplexity" : 5,    // {int} Max cyclomatic complexity per function
     "maxlen"        : false,       // {int} Max number of characters per line
 
     // Relaxing
@@ -121,6 +113,9 @@
       "_": false,               // Underscore.js
       "$": false,               // jQuery
       "Router": false,           // iron-router
-      "Peer": false
+
+      "Peer": false, //Peer js
+
+      "RtcActionHooks": true
     }
 }

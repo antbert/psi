@@ -1,18 +1,19 @@
-var modernizr = Npm.require('modernizr');
+Meteor.startup(function () {
+  var modernizr = Npm.require('modernizr');
 
-function processModernizr() {
-  if(processModernizr.cache) {
-    modernizr.build({}, function (result) {
-      processModernizr.cache = result;
+  function processModernizr() {
+    var that = this;
+    if(!processModernizr.cache) {
+      modernizr.build({}, function (result) {
+        processModernizr.cache = result;
+        that.response.end(processModernizr.cache);
+      });
+    } else {
       this.response.end(processModernizr.cache);
-    });
-  } else {
-    this.response.end(processModernizr.cache);
+    }
   }
-}
 
-Meteor.startup(function () {  
   Router.route('/meteor/build.js', function () {
-    processModernizr.call(this);    
+    processModernizr.call(this);
   }, {where: 'server'});
 });

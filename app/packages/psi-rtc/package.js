@@ -29,7 +29,7 @@ Package.onUse(function onUse(api) {
   ], ['client']);
 });
 
-Package.onTest(function onTest(api) {});
+//Package.onTest(function onTest(api) {});
 
 Npm.depends({
   'peerjs': '0.3.9'
