@@ -76,7 +76,7 @@ module.exports = function initGrunt(grunt) {
 
     githooks: {
       all: {
-        'pre-commit': ''
+        'pre-commit': 'jshint jscs'
       }
     }
   });
@@ -92,4 +92,5 @@ module.exports = function initGrunt(grunt) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss']);
   grunt.registerTask('quality', ['jshint', 'jscs']);
+  grunt.registerTask('git', ['githooks']);
 };
