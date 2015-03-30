@@ -21,8 +21,8 @@ Package.onUse(function(api) {
   api.addFiles(['lib/meteor.html'], ['client']);
 });
 
-Package.onTest(function(api) {
-});
+/*Package.onTest(function(api) {
+});*/
 
 Npm.depends({
   'modernizr': '3.0.0-alpha.3'

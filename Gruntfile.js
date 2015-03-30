@@ -1,11 +1,12 @@
-const TEST_FILES = 'app/test/**/*.js';
-const JS_FILES = [
-  'Gruntfile.js', 
-  'app/client/**/*.js', 
+var TEST_FILES = 'app/test/**/*.js';
+var JS_FILES = [
+  'Gruntfile.js',
+  'app/client/**/*.js',
   'app/server/**/*.js',
   'app/packages/**/*.js',
   TEST_FILES
 ];
+
 module.exports = function initGrunt(grunt) {
   grunt.initConfig({
     postcss: {
@@ -57,7 +58,7 @@ module.exports = function initGrunt(grunt) {
       ],
       options: {
         bundleExec: true,
-        config: '.scss-lint.yml', 
+        config: '.scss-lint.yml',
         colorizeOutput: true
       }
     },
@@ -90,4 +91,5 @@ module.exports = function initGrunt(grunt) {
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss']);
+  grunt.registerTask('quality', ['jshint', 'jscs']);
 };
