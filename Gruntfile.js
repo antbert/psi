@@ -78,6 +78,24 @@ module.exports = function initGrunt(grunt) {
       all: {
         'pre-commit': 'jshint jscs'
       }
+    },
+
+    jade: {
+      compile: {
+        options: {
+          pretty: true,
+          data: {
+            debug: false
+          }
+        },
+        files: [{
+          expand: true,
+          cwd: 'statichtml/jade/',
+          src: '**/*.jade',
+          dest: 'statichtml/',
+          ext: '.html'
+        }]
+      }
     }
   });
 
@@ -88,9 +106,11 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
   grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss']);
   grunt.registerTask('quality', ['jshint', 'jscs']);
   grunt.registerTask('git', ['githooks']);
+  grunt.registerTask('cjade', ['jade']);
 };
