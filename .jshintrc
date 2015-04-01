@@ -113,7 +113,10 @@
       "_": false,               // Underscore.js
       "$": false,               // jQuery
       "Router": false,           // iron-router
-
+      "MochaWeb": false,
+      "describe": false,
+      "it": false,
+      "chai": false,
       "Peer": false, //Peer js
 
       "RtcActionHooks": true
