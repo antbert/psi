@@ -118,6 +118,7 @@
       "it": false,
       "chai": false,
       "Peer": false, //Peer js
+      "ServiceConfiguration": false,
 
       "RtcActionHooks": true
     }
