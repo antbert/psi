@@ -1,0 +1,208 @@
+// variables
+$sideblock-bg-color: #161616;
+$company-page-bg-color: #f9f9f9;
+$company-page-header-bg-color: #fff;
+
+.company-page {
+  background-color: $company-page-bg-color;
+}
+
+.sideblock {
+  background-color: $sideblock-bg-color;
+  bottom: 0;
+  color: #fff;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: percentage(350px / 1280px);
+}
+
+.int-section {
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+
+.int-section__header {
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.int-section__list {
+  list-style: disc;
+  padding-left: 40px;
+}
+
+.int-section__list > li {
+  margin-bottom: 15px;
+
+  &.red {
+    color: #d65831;
+  }
+
+  &.green {
+    color: #40bf53;
+  }
+
+  &.orange {
+    color: #c38c17;
+  }
+
+  &.blue {
+    color: #31d6cc;
+  }
+}
+
+.int-section__list > li > span {
+  color: #fff;
+  font-size: 14px;
+}
+
+.pay-attention {
+  padding: 0 25px;
+}
+
+.pay-attention__header {
+  color: #6b6b6b;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-skills {
+  color: #6b6b6b;
+  font-size: 11px;
+}
+
+.p-photo-container {
+  display: inline-block;
+}
+
+.card-container {
+  display: inline-block;
+}
+
+.footer-list {
+  padding: 0 25px;
+}
+
+.footer-list__item {
+  display: inline-block;
+}
+
+.footer-link {
+  color: #6b6b6b;
+  font-size: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.copyright {
+  color: #6b6b6b;
+  font-size: 10px;
+}
+
+.content-block {
+  margin-left: percentage(350px / 1280px);
+  position: relative;
+  width: percentage(930px / 1280px);
+}
+
+.c-header-wrapper {
+  background-color: $company-page-header-bg-color;
+  min-height: 65px;
+}
+
+.c-header__list-item {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.c-header__company-name {
+  border-right: 1px solid #e5e5e5;
+  display: inline-block;
+  padding: 14px 35px;
+  vertical-align: middle;
+}
+
+.c-header__name {
+  color: #000;
+  font-weight: 300;
+}
+
+.c-header__nav {
+  display: inline-block;
+  margin-left: 60px;
+  vertical-align: middle;
+}
+
+.c-header-link {
+  color: #000;
+  font-size: 12px;
+}
+
+.c-content {
+  padding: 0 35px;
+}
+
+.c-content-header {
+  margin-bottom: 20px;
+}
+
+.c-content-header__name {
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+
+.vacancies-container {
+  margin-bottom: 35px;
+}
+
+.vacancies__item {
+  display: inline-block;
+}
+
+.vacancies-label {
+  display: inline;
+  padding: .4em .6em .4em;
+  font-size: 75%;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.label-default {
+  background-color: #777;
+}
+
+.label-primary {
+  background-color: #337ab7;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label-danger {
+  background-color: #d9534f;
+}
