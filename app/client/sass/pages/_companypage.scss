@@ -60,6 +60,7 @@ $company-page-header-bg-color: #fff;
 }
 
 .pay-attention {
+  margin-bottom: 50px;
   padding: 0 25px;
 }
 
@@ -82,10 +83,18 @@ $company-page-header-bg-color: #fff;
 
 .p-photo-container {
   display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.card-link__photo {
+  border-radius: 50%;
+  width: 100px;
 }
 
 .card-container {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .footer-list {
