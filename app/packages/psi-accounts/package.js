@@ -6,13 +6,21 @@ Package.describe({
   version: '0.0.1'
 });
 
-Package.onUse(function(api) {
+Package.onUse(function (api) {
   api.use([
     'iron:router',
-    'templating'
+    'templating',
+    'service-configuration'
   ], 'client');
 
-  api.addFiles('lib/routes.js');
+  api.addFiles([
+    'lib/routes.js'
+  ]);
+
+  api.addFiles([
+    'lib/config.js'
+  ], ['server']);
+
   api.addFiles([
     'lib/client/templates/landing.html',
     'lib/client/templates/landing.js',
