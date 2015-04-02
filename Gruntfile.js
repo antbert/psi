@@ -71,6 +71,10 @@ module.exports = function initGrunt(grunt) {
       js: {
         files: JS_FILES,
         tasks: ['jshint', 'jscs']
+      },
+      jade: {
+        files: ['**/*.jade'],
+        tasks: ['jade']
       }
     },
 
