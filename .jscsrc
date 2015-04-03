@@ -13,5 +13,6 @@
   "disallowPaddingNewlinesInBlocks": true,
   "disallowSpaceAfterObjectKeys": true,
   "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
-  "validateParameterSeparator": ", "
+  "validateParameterSeparator": ", ",
+  "validateIndentation": 2
 }

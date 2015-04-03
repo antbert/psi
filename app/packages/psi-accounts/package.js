@@ -22,10 +22,13 @@ Package.onUse(function (api) {
     'lib/config.js'
   ], ['server']);
 
+  var TEMPLATES = 'lib/client/templates/';
+
   api.addFiles([
-    'lib/client/templates/landing.jade',
-    'lib/client/templates/landing-helpers.js',
-    'lib/client/templates/login.jade',
-    'lib/client/templates/login-events.js'
+    TEMPLATES + '/landing.jade',
+    TEMPLATES + '/landing-helpers.js',
+    TEMPLATES + '/login.jade',
+    TEMPLATES + '/login-events.js',
+    TEMPLATES + '/login-helpers.js'
   ], ['client']);
 });
