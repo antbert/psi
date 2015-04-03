@@ -29,7 +29,7 @@
         </header>
         <div class="vacancies-container">
           <ul class="vacancies">
-            <li class="vacancies__item">Vacancies:</li>
+            <li class="vacancies__item vacancies-tag">Vacancies:</li>
             <li class="vacancies__item"><span class="vacancies-label label-default">WEB-Designer</span></li>
             <li class="vacancies__item"><span class="vacancies-label label-primary">Android Engineer</span></li>
             <li class="vacancies__item"><span class="vacancies-label label-success">HR Manager</span></li>
@@ -39,9 +39,10 @@
           </ul>
         </div>
         <div>
-          <table>
+          <table class="candidates-table">
             <thead>
               <tr>
+                <th></th>
                 <th>NAME</th>
                 <th>VACANCY</th>
                 <th>TEST</th>
@@ -50,7 +51,23 @@
             </thead>
             <tbody>
               <tr>
-                <td><a href="#"><img><span>Mike Pierce</span></a></td>
+                <td class="candidate-table__img-col"><a href="#"><img src="../app/public/images/12.png" class="candidate-table-img"></a></td>
+                <td><a href="#"><span class="candidate-table-name">Mike Pierce</span></a></td>
+                <td><span>Android Engineer</span></td>
+                <td><span>9.8</span></td>
+                <td><span>01.04.15</span></td>
+                <td>
+                  <select>
+                    <option>item1</option>
+                    <option>item2</option>
+                    <option>item3</option>
+                    <option>item4</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="candidate-table__img-col"><a href="#"><img src="../app/public/images/12.png" class="candidate-table-img"></a></td>
+                <td><a href="#"><span class="candidate-table-name">Mike Pierce</span></a></td>
                 <td><span>Android Engineer</span></td>
                 <td><span>9.8</span></td>
                 <td><span>01.04.15</span></td>

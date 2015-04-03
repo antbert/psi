@@ -30,7 +30,7 @@ html(lang='en')
           h1.c-content-header__name Candidates
         div.vacancies-container
           ul.vacancies
-            li.vacancies__item Vacancies:
+            li.vacancies__item.vacancies-tag Vacancies:
             li.vacancies__item
               span.vacancies-label.label-default WEB-Designer
             li.vacancies__item
@@ -44,19 +44,41 @@ html(lang='en')
             li.vacancies__item
               span.vacancies-label.label-danger QA Engineer
         div
-          table
+          table.candidates-table
             thead
               tr
+                th
                 th NAME
                 th VACANCY
                 th TEST
                 th DATE
             tbody
               tr
+                td.candidate-table__img-col
+                  a(href='#')
+                    img(src='../app/public/images/12.png').candidate-table-img
                 td
                   a(href='#')
-                    img
-                    span Mike Pierce
+                    span.candidate-table-name Mike Pierce
+                td
+                  span Android Engineer
+                td
+                  span 9.8
+                td
+                  span 01.04.15
+                td
+                  select
+                    option item1
+                    option item2
+                    option item3
+                    option item4
+              tr
+                td.candidate-table__img-col
+                  a(href='#')
+                    img(src='../app/public/images/12.png').candidate-table-img
+                td
+                  a(href='#')
+                    span.candidate-table-name Mike Pierce
                 td
                   span Android Engineer
                 td
@@ -105,3 +127,4 @@ html(lang='en')
             a(href='#').footer-link CONTACT
           li.footer-list__item
             small.copyright &#64 2015 Interviewman, Inc.
+            

@@ -180,6 +180,10 @@ $company-page-header-bg-color: #fff;
   display: inline-block;
 }
 
+.vacancies-tag {
+  margin-right: 15px;
+}
+
 .vacancies-label {
   display: inline;
   padding: .4em .6em .4em;
@@ -214,4 +218,41 @@ $company-page-header-bg-color: #fff;
 
 .label-danger {
   background-color: #d9534f;
+}
+
+// table
+
+.candidates-table {
+  max-width: 100%;
+  width: 100%;
+}
+
+.candidates-table thead {
+  color: #737373;
+  font-size: 11px;
+}
+
+.candidates-table thead th {
+  font-weight: 400;
+  text-align: left;
+}
+
+.candidates-table tbody {
+  font-size: 14px;
+}
+
+.candidate-table__img-col {
+  width: 8%;
+}
+
+.candidate-table-img {
+  border-radius: 50%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 50px;
+}
+
+.candidate-table-name {
+  color: #000;
+  font-weight: 600;
 }
