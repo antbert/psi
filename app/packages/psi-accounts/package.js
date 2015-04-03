@@ -25,10 +25,10 @@ Package.onUse(function (api) {
   var TEMPLATES = 'lib/client/templates/';
 
   api.addFiles([
-    TEMPLATES + '/landing.jade',
-    TEMPLATES + '/landing-helpers.js',
-    TEMPLATES + '/login.jade',
-    TEMPLATES + '/login-events.js',
-    TEMPLATES + '/login-helpers.js'
+    TEMPLATES + '/landing/landing.jade',
+    TEMPLATES + '/landing/landing-helpers.js',
+    TEMPLATES + '/login/login.jade',
+    TEMPLATES + '/login/login-events.js',
+    TEMPLATES + '/login/login-helpers.js'
   ], ['client']);
 });
