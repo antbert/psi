@@ -6,42 +6,43 @@
     <title>Candidates</title>
     <link rel="stylesheet" href="../app/client/styles/style.css">
   </head>
-  <body>
-    <main role="main">
-      <header>
-        <h1><a href="#">EPAM</a></h1>
-        <nav>
-          <ul>
-            <li><a href="#">CANDIDATES</a></li>
-            <li><a href="#">MESSAGES</a></li>
-            <li><a href="#">VACANCY</a></li>
-            <li><a href="#">SEARCH</a></li>
+  <body class="company-page">
+    <main role="main" class="content-block">
+      <header class="c-header-wrapper">
+        <h1 class="c-header__company-name"><a href="#" class="c-header__name">EPAM</a></h1>
+        <nav class="c-header__nav">
+          <ul class="c-header__list">
+            <li class="c-header__list-item"><a href="#" class="c-header-link">CANDIDATES</a></li>
+            <li class="c-header__list-item"><a href="#" class="c-header-link">MESSAGES</a></li>
+            <li class="c-header__list-item"><a href="#" class="c-header-link">VACANCY</a></li>
+            <li class="c-header__list-item"><a href="#" class="c-header-link">SEARCH</a></li>
           </ul>
         </nav>
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+        <ul class="c-header-settings">
+          <li class="c-header-settings_item"><a href="#"></a></li>
+          <li class="c-header-settings_item"><a href="#"></a></li>
         </ul>
       </header>
-      <section>
-        <header>
-          <h1>Candidates</h1>
+      <section class="c-content">
+        <header class="c-content-header">
+          <h1 class="c-content-header__name">Candidates</h1>
         </header>
-        <div>
-          <ul>
-            <li>Vacancies:</li>
-            <li><span>WEB-Designer</span></li>
-            <li><span>Android Engineer</span></li>
-            <li><span>HR Manager</span></li>
-            <li><span>iOS Developer</span></li>
-            <li><span>Front-End Engineer</span></li>
-            <li><span>QA Engineer</span></li>
+        <div class="vacancies-container">
+          <ul class="vacancies">
+            <li class="vacancies__item vacancies-tag">Vacancies:</li>
+            <li class="vacancies__item"><span class="vacancies-label label-default">WEB-Designer</span></li>
+            <li class="vacancies__item"><span class="vacancies-label label-primary">Android Engineer</span></li>
+            <li class="vacancies__item"><span class="vacancies-label label-success">HR Manager</span></li>
+            <li class="vacancies__item"><span class="vacancies-label label-info">iOS Developer</span></li>
+            <li class="vacancies__item"><span class="vacancies-label label-warning">Front-End Engineer</span></li>
+            <li class="vacancies__item"><span class="vacancies-label label-danger">QA Engineer</span></li>
           </ul>
         </div>
         <div>
-          <table>
+          <table class="candidates-table">
             <thead>
               <tr>
+                <th></th>
                 <th>NAME</th>
                 <th>VACANCY</th>
                 <th>TEST</th>
@@ -50,7 +51,23 @@
             </thead>
             <tbody>
               <tr>
-                <td><a href="#"><img><span>Mike Pierce</span></a></td>
+                <td class="candidate-table__img-col"><a href="#"><img src="../app/public/images/12.png" class="candidate-table-img"></a></td>
+                <td><a href="#"><span class="candidate-table-name">Mike Pierce</span></a></td>
+                <td><span>Android Engineer</span></td>
+                <td><span>9.8</span></td>
+                <td><span>01.04.15</span></td>
+                <td>
+                  <select>
+                    <option>item1</option>
+                    <option>item2</option>
+                    <option>item3</option>
+                    <option>item4</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="candidate-table__img-col"><a href="#"><img src="../app/public/images/12.png" class="candidate-table-img"></a></td>
+                <td><a href="#"><span class="candidate-table-name">Mike Pierce</span></a></td>
                 <td><span>Android Engineer</span></td>
                 <td><span>9.8</span></td>
                 <td><span>01.04.15</span></td>
@@ -68,32 +85,32 @@
         </div>
       </section>
     </main>
-    <aside>
-      <section>
-        <h1>interviewman</h1>
-        <ul>
-          <li>Interview with Andres Jasso</li>
-          <li>Interview with Ian Ruppert</li>
-          <li>Interview with Bartosz Borowiec</li>
-          <li>Interview with Scott Chisholm</li>
+    <aside class="sideblock">
+      <section class="int-section">
+        <h1 class="int-section__header">INTERVIEWMAN</h1>
+        <ul class="int-section__list">
+          <li class="item green"><span>Interview with Andres Jasso</span></li>
+          <li class="item orange"> <span>Interview with Ian Ruppert</span></li>
+          <li class="item red"> <span>Interview with Bartosz Borowiec</span></li>
+          <li class="item blue"><span>Interview with Scott Chisholm</span></li>
         </ul>
       </section>
-      <section>
-        <h1>Pay Attention</h1>
-        <figure><a href="#"><img src="#"></a>
-          <div>
-            <h3><span><a href="#">Philippe Francois</a></span></h3>
-            <p><span>WEB-Designer, UI/UX Developer</span></p>
-            <p><span>Earlier worked: GitHub, Google</span></p>
+      <section class="pay-attention">
+        <h1 class="pay-attention__header">Pay Attention</h1>
+        <figure class="pay-attention__card"><a href="#" class="card-link p-photo-container"><img src="../app/public/images/1.png" class="card-link__photo"></a>
+          <div class="card-container">
+            <h3 class="card-container__header"><span><a href="#" class="card-link">Philippe Francois</a></span></h3>
+            <p><span class="user-skills">WEB-Designer, UI/UX Developer</span></p>
+            <p><span class="user-skills">Earlier worked: GitHub, Google</span></p>
           </div>
         </figure>
       </section>
       <footer>
-        <ul>
-          <li><a href="#">PRIVACY</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">CONTACT</a></li>
-          <li><small>&#64 2015 Interviewman, Inc.</small></li>
+        <ul class="footer-list">
+          <li class="footer-list__item"><a href="#" class="footer-link">PRIVACY</a></li>
+          <li class="footer-list__item"><a href="#" class="footer-link">ABOUT</a></li>
+          <li class="footer-list__item"><a href="#" class="footer-link">CONTACT</a></li>
+          <li class="footer-list__item"><small class="copyright">&#64 2015 Interviewman, Inc.</small></li>
         </ul>
       </footer>
     </aside>

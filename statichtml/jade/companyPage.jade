@@ -5,58 +5,80 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title Candidates
     link(rel='stylesheet', href='../app/client/styles/style.css')
-  body
-    main(role='main')
-      header
-        h1
-          a(href='#') EPAM
-        nav
-          ul
-            li
-              a(href='#') CANDIDATES
-            li
-              a(href='#') MESSAGES
-            li
-              a(href='#') VACANCY
-            li
-              a(href='#') SEARCH
-        ul
-          li
+  body.company-page
+    main(role='main').content-block
+      header.c-header-wrapper
+        h1.c-header__company-name
+          a(href='#').c-header__name EPAM
+        nav.c-header__nav
+          ul.c-header__list
+            li.c-header__list-item
+              a(href='#').c-header-link CANDIDATES
+            li.c-header__list-item
+              a(href='#').c-header-link MESSAGES
+            li.c-header__list-item
+              a(href='#').c-header-link VACANCY
+            li.c-header__list-item
+              a(href='#').c-header-link SEARCH
+        ul.c-header-settings
+          li.c-header-settings_item
             a(href='#')
-          li
+          li.c-header-settings_item
             a(href='#')
-      section
-        header
-          h1 Candidates
+      section.c-content
+        header.c-content-header
+          h1.c-content-header__name Candidates
+        div.vacancies-container
+          ul.vacancies
+            li.vacancies__item.vacancies-tag Vacancies:
+            li.vacancies__item
+              span.vacancies-label.label-default WEB-Designer
+            li.vacancies__item
+              span.vacancies-label.label-primary Android Engineer
+            li.vacancies__item
+              span.vacancies-label.label-success HR Manager
+            li.vacancies__item
+              span.vacancies-label.label-info iOS Developer
+            li.vacancies__item
+              span.vacancies-label.label-warning Front-End Engineer
+            li.vacancies__item
+              span.vacancies-label.label-danger QA Engineer
         div
-          ul
-            li Vacancies:
-            li
-              span WEB-Designer
-            li
-              span Android Engineer
-            li
-              span HR Manager
-            li
-              span iOS Developer
-            li
-              span Front-End Engineer
-            li
-              span QA Engineer
-        div
-          table
+          table.candidates-table
             thead
               tr
+                th
                 th NAME
                 th VACANCY
                 th TEST
                 th DATE
             tbody
               tr
+                td.candidate-table__img-col
+                  a(href='#')
+                    img(src='../app/public/images/12.png').candidate-table-img
                 td
                   a(href='#')
-                    img
-                    span Mike Pierce
+                    span.candidate-table-name Mike Pierce
+                td
+                  span Android Engineer
+                td
+                  span 9.8
+                td
+                  span 01.04.15
+                td
+                  select
+                    option item1
+                    option item2
+                    option item3
+                    option item4
+              tr
+                td.candidate-table__img-col
+                  a(href='#')
+                    img(src='../app/public/images/12.png').candidate-table-img
+                td
+                  a(href='#')
+                    span.candidate-table-name Mike Pierce
                 td
                   span Android Engineer
                 td
@@ -70,34 +92,39 @@ html(lang='en')
                     option item3
                     option item4
                 
-    aside
-      section
-        h1 interviewman
-        ul
-          li Interview with Andres Jasso
-          li Interview with Ian Ruppert
-          li Interview with Bartosz Borowiec
-          li Interview with Scott Chisholm
-      section
-        h1 Pay Attention
-        figure
-          a(href='#')
-            img(src='#')
-          div
-            h3
+    aside.sideblock
+      section.int-section
+        h1.int-section__header INTERVIEWMAN
+        ul.int-section__list
+          li.item.green
+            span Interview with Andres Jasso
+          li.item.orange 
+            span Interview with Ian Ruppert
+          li.item.red 
+            span Interview with Bartosz Borowiec
+          li.item.blue
+            span Interview with Scott Chisholm
+      section.pay-attention
+        h1.pay-attention__header Pay Attention
+        figure.pay-attention__card
+          a(href='#').card-link.p-photo-container
+            img(src='../app/public/images/1.png').card-link__photo
+          div.card-container
+            h3.card-container__header
               span
-                a(href='#') Philippe Francois
+                a(href='#').card-link Philippe Francois
             p
-              span WEB-Designer, UI/UX Developer
+              span.user-skills WEB-Designer, UI/UX Developer
             p
-              span Earlier worked: GitHub, Google
+              span.user-skills Earlier worked: GitHub, Google
       footer
-        ul
-          li
-            a(href='#') PRIVACY
-          li
-            a(href='#') ABOUT
-          li
-            a(href='#') CONTACT
-          li
-            small &#64 2015 Interviewman, Inc.
+        ul.footer-list
+          li.footer-list__item
+            a(href='#').footer-link PRIVACY
+          li.footer-list__item
+            a(href='#').footer-link ABOUT
+          li.footer-list__item
+            a(href='#').footer-link CONTACT
+          li.footer-list__item
+            small.copyright &#64 2015 Interviewman, Inc.
+            
