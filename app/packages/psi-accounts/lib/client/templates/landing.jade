@@ -1,0 +1,14 @@
+//
+   Created by Aleh_Atsman on 4/3/2015.
+
+template(name="landing")
+    section(class="wrapper")
+        .overlay
+            .land-container
+                .logo
+                    img(class="logo__item", src="../images/logo.svg")
+                p.landing-about #{text.landingAbout}
+                p.btn-wrap
+                    a(href="#", class="btn btn-lg btn-info") #{text.register}
+                p.btn-wrap
+                    a(href="/login", class="btn-link login-link") #{text.login}

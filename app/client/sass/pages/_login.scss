@@ -63,11 +63,14 @@ $submit-btn-color: #fff;
 }
 
 .login-button {
+  @extend .btn-link;
+  @extend .btn-block;
   @include font-size(24px);
   color: $submit-btn-color;
   padding: 25px 0;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .social-btns {

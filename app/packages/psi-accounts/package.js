@@ -10,7 +10,8 @@ Package.onUse(function (api) {
   api.use([
     'iron:router',
     'templating',
-    'service-configuration'
+    'service-configuration',
+    'mquandalle:jade'
   ], 'client');
 
   api.addFiles([
@@ -22,9 +23,9 @@ Package.onUse(function (api) {
   ], ['server']);
 
   api.addFiles([
-    'lib/client/templates/landing.html',
-    'lib/client/templates/landing.js',
-    'lib/client/templates/login.html',
-    'lib/client/templates/login.js'
+    'lib/client/templates/landing.jade',
+    'lib/client/templates/landing-helpers.js',
+    'lib/client/templates/login.jade',
+    'lib/client/templates/login-events.js'
   ], ['client']);
 });
