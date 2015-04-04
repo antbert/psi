@@ -8,7 +8,7 @@
   </head>
   <body class="company-page">
     <main role="main" class="content-block">
-      <header class="c-header-wrapper">
+      <header class="c-header-wrapper"><a class="aside-toggle-wrapper"><span class="btn-aside-toggle"></span></a>
         <h1 class="c-header__company-name"><a href="#" class="c-header__name">EPAM</a></h1>
         <nav class="c-header__nav">
           <ul class="c-header__list">
@@ -114,5 +114,13 @@
         </ul>
       </footer>
     </aside>
+    <script type="text/javascript">
+      document.querySelector( ".aside-toggle-wrapper" )
+        .addEventListener( "click", function() {
+          this.classList.toggle( "active" );
+          document.querySelector( ".sideblock" ).classList.toggle( "active" );
+          document.querySelector( ".content-block" ).classList.toggle( "active" );
+        });
+    </script>
   </body>
 </html>

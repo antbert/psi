@@ -14,7 +14,18 @@ $company-page-header-bg-color: #fff;
   overflow-y: auto;
   position: fixed;
   top: 0;
+  transition: all 300ms ease-in-out;
   width: percentage(350px / 1280px);
+
+  @media only screen and (max-width: 64em) {
+    left: -27.34375%;
+    position: fixed;
+  }
+
+  &.active {
+    left: 0;
+    transition: all 300ms ease-in-out;
+  }
 }
 
 .int-section {
@@ -123,6 +134,17 @@ $company-page-header-bg-color: #fff;
   margin-left: percentage(350px / 1280px);
   position: relative;
   width: percentage(930px / 1280px);
+
+  @media only screen and (max-width: 64em) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.content-block.active {
+  margin-left: percentage(350px / 1280px);
+  transition: all 300ms ease-in-out;
+  width: percentage(930px / 1280px);
 }
 
 .c-header-wrapper {
@@ -170,6 +192,56 @@ $company-page-header-bg-color: #fff;
   font-size: 30px;
   font-weight: 300;
   margin-top: 30px;
+}
+
+.aside-toggle-wrapper {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 35px 16px 20px;
+  vertical-align: middle;
+
+  @media only screen and (min-width: 64.063em) {
+    display: none;
+  }
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle {
+  background-color: transparent;
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle:before,
+.aside-toggle-wrapper.active .btn-aside-toggle:after {
+  top: 0;
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle:before {
+  transform: rotate(45deg);
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle:after {
+  transform: rotate(-45deg);
+}
+
+.btn-aside-toggle,
+.btn-aside-toggle:before,
+.btn-aside-toggle:after {
+  background: #000;
+  border-radius: 1px;
+  content: '';
+  cursor: pointer;
+  display: block;
+  height: 5px;
+  position: absolute;
+  transition: all 200ms ease-in-out;
+  width: 35px;
+}
+
+.btn-aside-toggle:before {
+  top: -10px;
+}
+
+.btn-aside-toggle:after {
+  bottom: -10px;
 }
 
 .vacancies-container {

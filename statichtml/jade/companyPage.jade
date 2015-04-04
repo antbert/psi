@@ -8,6 +8,8 @@ html(lang='en')
   body.company-page
     main(role='main').content-block
       header.c-header-wrapper
+        a.aside-toggle-wrapper
+          span.btn-aside-toggle
         h1.c-header__company-name
           a(href='#').c-header__name EPAM
         nav.c-header__nav
@@ -127,4 +129,10 @@ html(lang='en')
             a(href='#').footer-link CONTACT
           li.footer-list__item
             small.copyright &#64 2015 Interviewman, Inc.
-            
+    script(type="text/javascript").
+      document.querySelector( ".aside-toggle-wrapper" )
+        .addEventListener( "click", function() {
+          this.classList.toggle( "active" );
+          document.querySelector( ".sideblock" ).classList.toggle( "active" );
+          document.querySelector( ".content-block" ).classList.toggle( "active" );
+        });
