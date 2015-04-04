@@ -46,6 +46,10 @@ $landing-primary-font-color: #fff;
   width: 200px;
 }
 
+.landing-register-link {
+  @extend .btn, .btn-lg, .btn-info;
+}
+
 .btn-wrap {
   margin-bottom: 20px;
   text-align: center;
