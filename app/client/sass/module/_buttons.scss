@@ -98,9 +98,13 @@ $btn-font-color: #fff;
 }
 
 .btn-info {
-  background: linear-gradient(135deg, rgba(3, 170, 244, 1) 50%,
+  /*background: linear-gradient(135deg, rgba(3, 170, 244, 1) 50%,
                                       rgba(41, 137, 216, 1) 50%,
-                                      rgba(4, 174, 245, 1) 50%);
+                                      rgba(4, 174, 245, 1) 50%);*/
+  background: linear-gradient(135deg, rgba(12,107,149,1) 50%,
+                                      rgba(32,124,202,1) 50%,
+                                      rgba(41,137,216,1) 50%,
+                                      rgba(14,111,152,1) 50%);                                  
   color: $btn-font-color;
 
   &:hover {

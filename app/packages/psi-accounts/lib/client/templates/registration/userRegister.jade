@@ -1,7 +1,4 @@
-//
-   Created by Aleh_Atsman on 4/3/2015.
-
-template(name="loginForm")
+template(name="userRegisterForm")
     section.wrapper
         .overlay
             .land-container
@@ -15,16 +12,18 @@ template(name="loginForm")
                                     input(class="input-block login-field", type="text", placeholder="USERNAME")
                                     span.error-message Wrong username!
                                 p
+                                    input(class="input-block email-field", type="text", placeholder="EMAIL")
+                                    span.error-message Incorrect email!
+                                p
                                     input(class="input-block password-field", type="password", placeholder="PASSWORD")
                                     span.error-message Oops, wrong password!
                                 .help-btns-wrapper
-                                    a(href="#", class="forgot-pass") #{text.forgotPass}
+                                    a(href="#", class="register-with") #{text.registerWith}
                                     .social-btns
                                         a(href="#")
                                             i.facebook-ico
                                         a(href="#")
                                             i.google-ico
-                                a.login-button #{text.login}
-                                p.dha Don't have an account? - 
-                                    a(href='#') Sign up
-                          
+                                a.register-button #{text.register}
+                                p.dha Have an account? - 
+                                  a(href='#') Sign in
