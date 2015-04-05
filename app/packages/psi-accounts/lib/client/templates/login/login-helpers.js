@@ -5,7 +5,7 @@ Template.loginForm.helpers({
   text: function getText() {
     return {
       forgotPass: 'Forgot password?',
-      login: 'Login'
+      login: 'Sign in'
     };
   }
 });

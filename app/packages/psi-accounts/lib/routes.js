@@ -14,4 +14,9 @@ Meteor.startup(function() {
       this.next();
     }
   });
+
+  Router.route('/register', {
+    name: 'registerRoute',
+    template: 'userRegisterForm'
+  });
 });

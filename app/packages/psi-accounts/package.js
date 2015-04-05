@@ -29,6 +29,9 @@ Package.onUse(function (api) {
     TEMPLATES + '/landing/landing-helpers.js',
     TEMPLATES + '/login/login.jade',
     TEMPLATES + '/login/login-events.js',
-    TEMPLATES + '/login/login-helpers.js'
+    TEMPLATES + '/login/login-helpers.js',
+    TEMPLATES + '/registration/userRegister.jade',
+    TEMPLATES + '/registration/userRegister-events.js',
+    TEMPLATES + '/registration/userRegister-helpers.js'
   ], ['client']);
 });
