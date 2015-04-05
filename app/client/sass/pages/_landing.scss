@@ -48,7 +48,9 @@ $landing-primary-font-color: #fff;
 }
 
 .landing-register-link {
-  @extend .btn, .btn-lg, .btn-info;
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-info;
 }
 
 .btn-wrap {

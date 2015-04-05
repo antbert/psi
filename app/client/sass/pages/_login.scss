@@ -97,8 +97,8 @@ $submit-btn-color: #fff;
 .social-btns {
   @include clearfix();
   display: inline-block;
-  margin-left: 90px;
   vertical-align: middle;
+  float: right;;
 }
 
 .facebook-ico {
