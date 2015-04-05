@@ -1,7 +1,10 @@
 
 Template.userRegister.events({
   'blur .email-field': function(event, template) {
-    var emailField = new EmailField(template.$(event.currentTarget));
+    var emailEl = template.$('input[type="email"]');
+    var eventValue = event.currentTarget.value;
+
+    var emailField = new EmailField(emailEl, eventValue);
     if(emailField.isNotValid()) {
       emailField.showError();
     } else {
@@ -11,8 +14,9 @@ Template.userRegister.events({
 });
 
 class EmailField {
-  constructor(el) {
+  constructor(el, value) {
     this.el = el;
+    this.value = value;
     this.fieldSelector = 'input[type="email"]';
     this.errorTagName = 'span';
     this.errorClass = 'has-error';
@@ -34,7 +38,7 @@ class EmailField {
   }
 
   isNotValid() {
-    return isNotValidEmail(this.el.value);
+    return isNotValidEmail(this.value);
   }
 }
 
