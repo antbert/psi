@@ -24,6 +24,9 @@ class EmailField {
   }
 
   showError() {
+    if(this.isErrorState()) {
+      return;
+    }
     this.el
       .toggleClass(this.errorClass)
       .next(this.errorTagName)
@@ -31,10 +34,21 @@ class EmailField {
   }
 
   hideError() {
+    if(this.isNotErrorState()) {
+      return;
+    }
     this.el
       .removeClass(this.errorClass)
       .next(this.errorTagName)
       .removeClass(this.visibilityClass);
+  }
+
+  isErrorState() {
+    return this.el.hasClass(this.errorClass);
+  }
+
+  isNotErrorState() {
+    return !this.isErrorState();
   }
 
   isNotValid() {
