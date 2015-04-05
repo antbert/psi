@@ -24,18 +24,18 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./app/client/styles'));
 });
 
-gulp.task('jshint', function () {
+gulp.task('jshint', function() {
   gulp.src(JS_FILES)
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('jscs', function () {
+gulp.task('jscs', function() {
   gulp.src(JS_FILES)
     .pipe(jscs({esnext: true}));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function() {
   gulp.watch('./app/sass/**/*.scss', ['sass']);
   gulp.watch(JS_FILES, ['jscs', 'jshint']);
 });
