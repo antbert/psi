@@ -11,7 +11,8 @@ Package.onUse(function (api) {
     'iron:router',
     'templating',
     'service-configuration',
-    'mquandalle:jade'
+    'mquandalle:jade',
+    'grigio:babel'
   ], 'client');
 
   api.addFiles([
@@ -31,7 +32,7 @@ Package.onUse(function (api) {
     TEMPLATES + '/login/login-events.js',
     TEMPLATES + '/login/login-helpers.js',
     TEMPLATES + '/registration/userRegister.jade',
-    TEMPLATES + '/registration/userRegister-events.js',
+    TEMPLATES + '/registration/userRegister-events.es6.js',
     TEMPLATES + '/registration/userRegister-helpers.js'
   ], ['client']);
 });

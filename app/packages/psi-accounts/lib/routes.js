@@ -17,6 +17,6 @@ Meteor.startup(function() {
 
   Router.route('/register', {
     name: 'registerRoute',
-    template: 'userRegisterForm'
+    template: 'userRegister'
   });
 });

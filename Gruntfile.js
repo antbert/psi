@@ -44,7 +44,8 @@ module.exports = function initGrunt(grunt) {
     jscs: {
       all: {
         options: {
-          config: '.jscsrc'
+          config: '.jscsrc',
+          esnext: true
         },
         files: {
           src: JS_FILES
