@@ -117,6 +117,7 @@
       "chai": false,
       "Peer": false, //Peer js
       "ServiceConfiguration": false,
+      "Plugin": false,
 
       "RtcActionHooks": true
     }

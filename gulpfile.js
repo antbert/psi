@@ -9,7 +9,8 @@ var JS_FILES = [
   'gulpfile.js',
   'app/client/**/*.js',
   'app/server/**/*.js',
-  'app/packages/**/*.js'
+  'app/packages/**/*.js',
+  '!app/packages/meteor-babel/**'
 ];
 
 gulp.task('sass', function() {
@@ -39,3 +40,5 @@ gulp.task('watch', function() {
   gulp.watch('./app/sass/**/*.scss', ['sass']);
   gulp.watch(JS_FILES, ['jscs', 'jshint']);
 });
+
+gulp.task('qality', ['jshint', 'jscs']);

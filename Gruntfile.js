@@ -1,12 +1,3 @@
-var TEST_FILES = 'app/test/**/*.js';
-var JS_FILES = [
-  'Gruntfile.js',
-  'app/client/**/*.js',
-  'app/server/**/*.js',
-  'app/packages/**/*.js',
-  TEST_FILES
-];
-
 module.exports = function initGrunt(grunt) {
   grunt.initConfig({
     postcss: {
@@ -34,25 +25,6 @@ module.exports = function initGrunt(grunt) {
       }
     },
 
-    jshint: {
-      options: {
-        jshintrc: true
-      },
-      all: JS_FILES
-    },
-
-    jscs: {
-      all: {
-        options: {
-          config: '.jscsrc',
-          esnext: true
-        },
-        files: {
-          src: JS_FILES
-        }
-      }
-    },
-
     scsslint: {
       allFiles: [
         'app/client/sass/**/*.scss'
@@ -69,19 +41,9 @@ module.exports = function initGrunt(grunt) {
         files: ['**/*.{scss,sass}'],
         tasks: ['sass', 'scsslint']
       },
-      js: {
-        files: JS_FILES,
-        tasks: ['jshint', 'jscs']
-      },
       jade: {
         files: ['**/*.jade'],
         tasks: ['jade']
-      }
-    },
-
-    githooks: {
-      all: {
-        'pre-commit': 'jshint jscs'
       }
     },
 
@@ -107,15 +69,10 @@ module.exports = function initGrunt(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jscs');
-  grunt.loadNpmTasks('grunt-githooks');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-contrib-jade');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['sass', 'postcss']);
-  grunt.registerTask('quality', ['jshint', 'jscs']);
-  grunt.registerTask('git', ['githooks']);
   grunt.registerTask('cjade', ['jade']);
 };

@@ -7,13 +7,16 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
+  api.versionsFrom('1.0.2.1');
+  
+  api.use(['grigio:babel']);
+
   api.use([
     'iron:router',
     'templating',
     'service-configuration',
-    'mquandalle:jade',
-    'grigio:babel'
-  ], 'client');
+    'mquandalle:jade'
+  ], ['client']);
 
   api.addFiles([
     'lib/routes.js'
@@ -23,7 +26,7 @@ Package.onUse(function (api) {
     'lib/config.js'
   ], ['server']);
 
-  var TEMPLATES = 'lib/client/templates/';
+  var TEMPLATES = 'lib/client/templates';
 
   api.addFiles([
     TEMPLATES + '/landing/landing.jade',
