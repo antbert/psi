@@ -77,6 +77,7 @@ $submit-btn-color: #fff;
 }
 
 .help-btns-wrapper {
+  @include clearfix;
   margin-bottom: 20px;
 }
 
@@ -86,12 +87,15 @@ $submit-btn-color: #fff;
   @extend .btn-lg;
   @include font-size(14px);
   background-color: #0c6b95;
+  border: 0;
   border-radius: 5px;
   color: $submit-btn-color;
   cursor: pointer;
   margin-bottom: 15px;
+  outline: none;
   padding: 10px 0;
   text-align: center;
+  width: 100%;
 }
 
 .social-btns {
@@ -137,4 +141,5 @@ $submit-btn-color: #fff;
 .register-with {
   @include font-size(11px);
   color: rgba(255, 255, 255, .5);
+  float: left;
 }
