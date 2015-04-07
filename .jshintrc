@@ -118,7 +118,7 @@
       "Peer": false, //Peer js
       "ServiceConfiguration": false,
       "Plugin": false,
-
+      "Globals": false, //Our global constants
       "RtcActionHooks": true
     }
 }
