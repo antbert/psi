@@ -9,13 +9,13 @@ template(name="loginForm")
           img(class="logo__item", src="../images/logo.svg", alt="")
         .login-container
           .form-container
-            form(class="form", action="")
+            form(class="form")
               .auth-form-body
                 p
-                  input(class="input-block login-field", type="text", placeholder="USERNAME")
+                  input(name="username", class="input-block login-field", type="text", placeholder="USERNAME")
                   span.error-message Wrong username!
                 p
-                  input(class="input-block password-field", type="password", placeholder="PASSWORD")
+                  input(name="password", class="input-block password-field", type="password", placeholder="PASSWORD")
                   span.error-message Oops, wrong password!
                 .help-btns-wrapper
                   a(href="#", class="forgot-pass") #{text.forgotPass}
@@ -24,7 +24,7 @@ template(name="loginForm")
                       i.facebook-ico
                     a(href="#")
                       i.google-ico
-                a.login-button #{text.login}
+                button(type='submit').login-button #{text.login}
                 p.dha Don't have an account? -
                   a(href='/register') Sign up
                           

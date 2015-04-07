@@ -1,29 +1,29 @@
-template(name="userRegister")
+template(name='userRegister')
   section.wrapper
     .overlay
       .land-container
         .logo
-          img(class="logo__item", src="../images/logo.svg", alt="")
+          img(class='logo__item', src='../images/logo.svg', alt='')
         .login-container
           .form-container
-            form(class="form", action="")
+            form(class='form')
               .auth-form-body
                 p
-                  input(class="input-block login-field", type="text", placeholder="USERNAME")
-                  span.error-message Wrong username!
+                  input(name='username', class='input-block login-field', type='text', placeholder='USERNAME')
+                  span.error-message Blank or 3 to 12 symbols!
                 p
-                  input(class="input-block email-field", type="email", placeholder="EMAIL")
+                  input(name='email', class='input-block email-field', type='email', placeholder='EMAIL')
                   span.error-message Incorrect email!
                 p
-                  input(class="input-block password-field", type="password", placeholder="PASSWORD")
+                  input(name='password', class='input-block password-field', type='password', placeholder='PASSWORD')
                   span.error-message Oops, wrong password!
                 .help-btns-wrapper
-                  a(href="#", class="register-with") #{text.registerWith}
+                  p(class='register-with') #{text.registerWith}
                   .social-btns
-                    a(href="#")
+                    a(href='#')
                       i.facebook-ico
-                    a(href="#")
+                    a(href='#')
                       i.google-ico
-                a.register-button #{text.register}
+                button(type='submit').register-button #{text.register}
                 p.dha Have an account? -
                   a(href='/login') Sign in

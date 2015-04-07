@@ -135,5 +135,6 @@ $submit-btn-color: #fff;
 }
 
 .register-with {
-  @extend .forgot-pass;
+  @include font-size(11px);
+  color: rgba(255, 255, 255, .5);
 }

@@ -11,7 +11,12 @@ Package.describe({
 });
 
 Package.onUse(function onUse(api) {
-  api.addFiles('.npm/package/node_modules/normalize.css/normalize.css');
+  api.addFiles([
+    '.npm/package/node_modules/normalize.css/normalize.css',
+    'globalConstants.js'
+  ], ['client']);
+
+  api.export('Globals', ['client']);
 });
 
 Npm.depends({

@@ -1,21 +1,27 @@
 Package.describe({
   name: 'psi-accounts',
-  // Short two-sentence summary.
   summary: 'Auth pages + landing',
-  // Version number.
   version: '0.0.1'
 });
 
 Package.onUse(function (api) {
   api.versionsFrom('1.0.2.1');
   
-  api.use(['grigio:babel']);
+  api.use([
+    'grigio:babel',
+    'accounts-password',
+    'mquandalle:jade',
+    'underscore'
+  ]);
+
+  api.use([
+    'service-configuration'
+  ], ['server']);
 
   api.use([
     'iron:router',
     'templating',
-    'service-configuration',
-    'mquandalle:jade'
+    'psi-clientlibs'
   ], ['client']);
 
   api.addFiles([
@@ -23,16 +29,16 @@ Package.onUse(function (api) {
   ]);
 
   api.addFiles([
-    'lib/config.js'
+    'lib/config.js',
+    'lib/registrationValidation.es6.js'
   ], ['server']);
 
   var TEMPLATES = 'lib/client/templates';
-
   api.addFiles([
     TEMPLATES + '/landing/landing.jade',
     TEMPLATES + '/landing/landing-helpers.js',
     TEMPLATES + '/login/login.jade',
-    TEMPLATES + '/login/login-events.js',
+    TEMPLATES + '/login/login-events.es6.js',
     TEMPLATES + '/login/login-helpers.js',
     TEMPLATES + '/registration/userRegister.jade',
     TEMPLATES + '/registration/userRegister-events.es6.js',

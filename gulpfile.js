@@ -6,7 +6,7 @@ var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 
 var JS_FILES = [
-  'gulpfile.js',
+  'Gulpfile.js',
   'app/client/**/*.js',
   'app/server/**/*.js',
   'app/packages/**/*.js',
@@ -37,7 +37,7 @@ gulp.task('jscs', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./app/sass/**/*.scss', ['sass']);
+  gulp.watch('./app/client/sass/**/*.scss', ['sass']);
   gulp.watch(JS_FILES, ['jscs', 'jshint']);
 });
 
