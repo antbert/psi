@@ -49,11 +49,11 @@ class Validator {
   }
 
   static validate(domEl, isValid) {
-    var emailEl = $(domEl);
-    var emailValue = domEl.value;
+    var $el = $(domEl);
+    var value = domEl.value;
 
-    var field = new Field(emailEl);
-    var validationResult = isValid(emailValue);
+    var field = new Field($el);
+    var validationResult = isValid(value);
     if(validationResult === true) {
       field.hideError();
       return true;
@@ -85,6 +85,7 @@ class Validator {
 
   /**
    * Username is first parametr, because we need to partial this function
+   * to use it with a contract of Validator.validate method.
    * @param username
    * @param password
    * @returns {ErrorObject|boolean}

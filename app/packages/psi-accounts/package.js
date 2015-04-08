@@ -29,11 +29,11 @@ Package.onUse(function (api) {
   ]);
 
   api.addFiles([
-    'lib/config.js',
-    'lib/registrationValidation.es6.js'
+    'lib/server/account-service-configuration.js',
+    'lib/server/registration-validation.es6.js'
   ], ['server']);
 
-  var TEMPLATES = 'lib/client/templates';
+  var TEMPLATES = 'lib/client';
   api.addFiles([
     TEMPLATES + '/landing/landing.jade',
     TEMPLATES + '/landing/landing-helpers.js',
