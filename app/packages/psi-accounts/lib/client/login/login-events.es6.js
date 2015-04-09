@@ -5,18 +5,18 @@ Template.loginForm.events({
     event.preventDefault(); //stop form submit
     const {username, password} = event.target;
 
-    Meteor.loginWithPassword({email: username.value}, password.value, (error) => {
-      if(error) {
-        alert(`Error, code: ${error.error}". Reason: ${error.reason}`);
-      } else {
-        Router.go('/rtc');
-      }
-    });
+    Meteor.loginWithPassword({email: username.value}, password.value, loginHandler);
   },
 
-  'click .google-ico': function loginWithGoogle(/*event, template*/) {
-    Meteor.loginWithGoogle((error) => {
-      console.log(error);
-    });
+  'click .google-ico': function loginWithGoogle() {
+    Meteor.loginWithGoogle(loginHandler);
   }
 });
+
+function loginHandler(error) {
+  if(error) {
+    alert(`Error, code: ${error.error}". Reason: ${error.reason}`);
+  } else {
+    Router.go('/rtc');
+  }
+}
