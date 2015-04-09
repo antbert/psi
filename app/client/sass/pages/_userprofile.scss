@@ -1,0 +1,67 @@
+// variables
+$user-page-bg-color: #f9f9f9;
+
+.u-main-content {
+  background-color: $user-page-bg-color;
+}
+
+.user-nav {
+  border-bottom: 1px solid #000;
+  margin-bottom: 40px;
+}
+
+.user-nav__list {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.user-nav__list-item {
+  display: inline-block;
+}
+
+.user-nav-link {
+  display: block;
+  padding: 20px 0;
+}
+
+.user-profile-container {
+  @include clearfix;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.u-avatar-wrapper {
+  float: left;
+  width: 200px;
+}
+
+.u-avatar {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+.user-button {
+  @extend .btn;
+  @extend .btn-block;
+  @extend .btn-primary;
+  margin-bottom: 10px;
+}
+
+.u-name {
+  margin-bottom: 35px;
+}
+
+.u-info-section {
+  @include clearfix;
+}
+
+.u-info {
+  float: left;
+  padding-left: 40px;
+}
+
+.col {
+  float: left;
+  width: 300px;
+}
