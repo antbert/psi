@@ -9,7 +9,8 @@ Template.userRegister.events({
 
   'blur .password-field': function(event, template) {
     var username = template.$('.login-field').val();
-    Validator.validatePassword(event.currentTarget, username);
+    var email = template.$('.email-field').val();
+    Validator.validatePassword(event.currentTarget, username, email);
   },
 
   'submit form': function(event) {
@@ -44,8 +45,8 @@ class Validator {
     return Validator.validate(email, Validator.isEmailValid);
   }
 
-  static validatePassword(password, username) {
-    return Validator.validate(password, _.partial(Validator.isPasswordNotValid, username));
+  static validatePassword(password, username, email) {
+    return Validator.validate(password, _.partial(Validator.isPasswordNotValid, username, email));
   }
 
   static validate(domEl, isValid) {
@@ -68,7 +69,7 @@ class Validator {
     if(EMAIL_REGEX.test(value)) {
       return true;
     } else {
-      return {error: 'Email in not valid'};
+      return {error: 'Email is not valid'};
     }
   }
 
@@ -76,21 +77,23 @@ class Validator {
     var regex = /^\w+$/;
     if(value === '') {
       return true;
-    } else if(regex.test(value) && value.length >= 3 && value.length <= 12) {
-      return true;
-    } else {
+    } else if(!regex.test(value)) {
+      return {error: 'Error username should contains only numbers and letters'};
+    } else if(value.length < 3 || value.length > 12) {
       return {error: 'Error: username should be >= 3 and <= 12'};
+    } else {
+      return true;
     }
   }
 
   /**
-   * Username is first parametr, because we need to partial this function
+   * Username is first parameter, because we need to partial this function
    * to use it with a contract of Validator.validate method.
    * @param username
    * @param password
    * @returns {ErrorObject|boolean}
    */
-  static isPasswordNotValid(username, password) {
+  static isPasswordNotValid(username, email, password) {
     var constraintsList = [
       {
         isNotValid: () => {
@@ -103,6 +106,12 @@ class Validator {
           return password === username;
         },
         error: 'Error: Password must be different from Username!'
+      },
+      {
+        isNotValid: () => {
+          return password === email;
+        },
+        error: 'Error: Password must be different from Email!'
       },
       {
         isNotValid: () => {
