@@ -12,6 +12,8 @@ html(lang='en')
           span.btn-aside-toggle
         h1.c-header__company-name
           a(href='#').c-header__name EPAM
+            span.down-arrow.nav-menu-toggler
+              &#9662;
         nav.c-header__nav
           ul.c-header__list
             li.c-header__list-item
@@ -135,4 +137,9 @@ html(lang='en')
           this.classList.toggle( "active" );
           document.querySelector( ".sideblock" ).classList.toggle( "active" );
           document.querySelector( ".content-block" ).classList.toggle( "active" );
+        });
+      
+      document.querySelector('.nav-menu-toggler')
+        .addEventListener('click', function() {
+          document.querySelector('.c-header__nav').classList.toggle('active');
         });

@@ -153,9 +153,34 @@ $company-page-header-bg-color: #fff;
   min-height: 65px;
 }
 
+.c-header__list {
+  @media only screen and (max-width: 768px) {
+    &:first-child {
+      border-top: 1px solid rgba(0, 0, 0, .15);
+    }
+
+    &:last-child {
+      box-shadow: 0 1px 1px rgba(34, 34, 34, .15);
+    }
+  }
+}
+
 .c-header__list-item {
   display: inline-block;
   margin-right: 40px;
+
+  // test
+  @media only screen and (max-width: 768px) {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    display: block;
+    margin-right: 0;
+    padding: 15px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .05);
+      transition: all .4s ease;
+    }
+  }
 }
 
 .c-header__company-name {
@@ -163,6 +188,19 @@ $company-page-header-bg-color: #fff;
   display: inline-block;
   padding: 14px 35px;
   vertical-align: middle;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    float: right;
+  }
+}
+
+.down-arrow {
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: inline;
+  }
 }
 
 .c-header__name {
@@ -174,6 +212,22 @@ $company-page-header-bg-color: #fff;
   display: inline-block;
   margin-left: 60px;
   vertical-align: middle;
+
+  // test
+  @media only screen and (max-width: 768px) {
+    background-color: #fff;
+    display: none;
+    margin-left: 0;
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    width: 100%;
+  }
+
+  &.active {
+    display: block;
+    transition: all .4s ease-in-out;
+  }
 }
 
 .c-header-link {
@@ -203,6 +257,13 @@ $company-page-header-bg-color: #fff;
 
   @media only screen and (min-width: 64.063em) {
     display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    float: left;
+    position: relative;
+    top: 20px;
   }
 }
 

@@ -9,7 +9,7 @@
   <body class="company-page">
     <main role="main" class="content-block">
       <header class="c-header-wrapper"><a class="aside-toggle-wrapper"><span class="btn-aside-toggle"></span></a>
-        <h1 class="c-header__company-name"><a href="#" class="c-header__name">EPAM</a></h1>
+        <h1 class="c-header__company-name"><a href="#" class="c-header__name">EPAM<span class="down-arrow nav-menu-toggler">&#9662;</span></a></h1>
         <nav class="c-header__nav">
           <ul class="c-header__list">
             <li class="c-header__list-item"><a href="#" class="c-header-link">CANDIDATES</a></li>
@@ -120,6 +120,11 @@
           this.classList.toggle( "active" );
           document.querySelector( ".sideblock" ).classList.toggle( "active" );
           document.querySelector( ".content-block" ).classList.toggle( "active" );
+        });
+      
+      document.querySelector('.nav-menu-toggler')
+        .addEventListener('click', function() {
+          document.querySelector('.c-header__nav').classList.toggle('active');
         });
     </script>
   </body>
