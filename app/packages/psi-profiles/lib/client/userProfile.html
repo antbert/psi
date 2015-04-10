@@ -1,8 +1,8 @@
 <template name="userProfile">
+  <header class="c-header-wrapper normal-flow">
+    <h1 class="c-header__company-name"><a href="#" class="c-header__name">INTERVIEWMAN</a></h1>
+  </header>
   <main role="main" class="userpage-content-block">
-    <header class="c-header-wrapper">
-      <h1 class="c-header__company-name"><a href="#" class="c-header__name">INTERVIEWMAN</a></h1>
-    </header>
     <section class="u-main-content">
       <nav class="user-nav">
         <ul class="user-nav__list">
@@ -16,15 +16,18 @@
       <section class="user-profile-container">
         <div class="u-avatar-wrapper"><img src="{{image}}" class="u-avatar">
           <a href="#" class="user-button">MESSAGE</a>
-          <a href="#" class="user-button">JOB OFFER</a></div>
+          <a href="#" class="user-button">JOB OFFER</a>
+        </div>
         <div class="u-info">
           <header class="u-name">
-            <h1 class="u-name__name">{{username}}</h1><span class="rating">
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span></span>
+            <h1 class="u-name__name">{{username}}</h1>
+            <span class="rating">
+              <span class="star"></span>
+              <span class="star"></span>
+              <span class="star"></span>
+              <span class="star"></span>
+              <span class="star"></span>
+            </span>
           </header>
           <section class="u-info-section">
             <div class="col col-1">
@@ -61,6 +64,7 @@
             </div>
             <div class="col col-3">
               <h1 class="info-header">About</h1>
+
               <p class="info-section-text">
                 London, Great Britan London, Great Britan London, Great Britan
                 London, Great Britan London, Great Britan London, Great Britan
@@ -96,12 +100,13 @@
     </section>
   </main>
   <script type="text/javascript">
-    $(document).ready(function () {
-      $('.accordion-tabs-minimal').each(function (index) {
+    $(document).ready(function() {
+      $('.accordion-tabs-minimal').each(function(index) {
         $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
       });
-      $('.accordion-tabs-minimal').on('click', 'li > a', function (event) {
-        if (!$(this).hasClass('is-active')) {
+
+      $('.accordion-tabs-minimal').on('click', 'li > a', function(event) {
+        if(!$(this).hasClass('is-active')) {
           event.preventDefault();
           var accordionTabs = $(this).closest('.accordion-tabs-minimal');
           accordionTabs.find('.is-open').removeClass('is-open').hide();

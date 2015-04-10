@@ -3,9 +3,13 @@
  */
 Template.userProfile.helpers({
   username: function() {
-    return Meteor.user().profile.name;
+    if(Meteor.user()) {
+      return Meteor.user().profile.name;
+    }
   },
   image: function() {
-    return Meteor.user().services.google.picture;
+    if(Meteor.user()) {
+      return Meteor.user().services.google.picture;
+    }
   }
 });
