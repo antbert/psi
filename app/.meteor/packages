@@ -6,7 +6,6 @@
 
 meteor-platform
 iron:router
-mike:mocha
 accounts-password
 psi-clientlibs
 psi-accounts
