@@ -4,5 +4,8 @@
 Globals = {
   cssClasses: {
     VISIBILITY_CLASS: 'is-visible'
+  },
+  selectors: {
+    BODY: 'body'
   }
 };

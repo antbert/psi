@@ -8,11 +8,14 @@ Package.describe({
 
 Package.onUse(function onUse(api) {
   api.addFiles([
-    '.npm/package/node_modules/normalize.css/normalize.css',
-    'globalConstants.js'
+    '.npm/package/node_modules/normalize.css/normalize.css'
   ], ['client']);
 
-  api.export('Globals', ['client']);
+  api.addFiles([
+    'globalConstants.js'
+  ]);
+
+  api.export('Globals');
 });
 
 Npm.depends({

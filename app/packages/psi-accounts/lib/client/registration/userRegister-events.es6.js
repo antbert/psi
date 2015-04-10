@@ -1,28 +1,29 @@
 Template.userRegister.events({
-  'blur .email-field': function(event) {
+  'blur .email-field': function (event) {
+    debugger;
     Validator.validateEmail(event.currentTarget);
   },
 
-  'blur .login-field': function(event) {
+  'blur .login-field': function (event) {
     Validator.validateUsername(event.currentTarget);
   },
 
-  'blur .password-field': function(event, template) {
+  'blur .password-field': function (event, template) {
     var username = template.$('.login-field').val();
     var email = template.$('.email-field').val();
     Validator.validatePassword(event.currentTarget, username, email);
   },
 
-  'submit form': function(event) {
+  'submit form': function (event) {
     event.preventDefault(); //stop form submit
-    if(Validator.isFormValid(event.currentTarget)) {
+    if (Validator.isFormValid(event.currentTarget)) {
       console.log('FORM VALID');
       var {username, email, password} = event.currentTarget;
       Accounts.createUser({
         username: username.value,
         email: email.value,
         password: password.value
-      }, function(err) {
+      }, function (err) {
         console.log(err);
       });
     }
@@ -30,8 +31,7 @@ Template.userRegister.events({
 });
 
 class Validator {
-  static isFormValid(formFields) {
-    var {username, email, password} = formFields;
+  static isFormValid({username, email, password}) {
     return Validator.validateUsername(username) &&
       Validator.validateEmail(email) &&
       Validator.validatePassword(password, username);
@@ -55,7 +55,7 @@ class Validator {
 
     var field = new Field($el);
     var validationResult = isValid(value);
-    if(validationResult === true) {
+    if (validationResult === true) {
       field.hideError();
       return true;
     } else {
@@ -66,7 +66,7 @@ class Validator {
 
   static isEmailValid(value) {
     var EMAIL_REGEX = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    if(EMAIL_REGEX.test(value)) {
+    if (EMAIL_REGEX.test(value)) {
       return true;
     } else {
       return {error: 'Email is not valid'};
@@ -75,11 +75,11 @@ class Validator {
 
   static isUsernameValid(value) {
     var regex = /^\w+$/;
-    if(value === '') {
+    if (value === '') {
       return true;
-    } else if(!regex.test(value)) {
+    } else if (!regex.test(value)) {
       return {error: 'Error username should contains only numbers and letters'};
-    } else if(value.length < 3 || value.length > 12) {
+    } else if (value.length < 3 || value.length > 12) {
       return {error: 'Error: username should be >= 3 and <= 12'};
     } else {
       return true;
@@ -90,8 +90,9 @@ class Validator {
    * Username is first parameter, because we need to partial this function
    * to use it with a contract of Validator.validate method.
    * @param username
+   * @param email
    * @param password
-   * @returns {ErrorObject|boolean}
+   * @returns {Object|boolean}
    */
   static isPasswordNotValid(username, email, password) {
     var constraintsList = [
@@ -134,8 +135,8 @@ class Validator {
     ];
 
     return _.find(constraintsList, (constraint) => {
-      return constraint.isNotValid();
-    }) || true;
+        return constraint.isNotValid();
+      }) || true;
   }
 }
 
@@ -150,14 +151,14 @@ class Field {
   showError(msg) {
     var error = this.el.next(this.errorTagName);
     error.text(msg);
-    if(this.isNotErrorState()) {
+    if (this.isNotErrorState()) {
       this.el.toggleClass(this.errorClass);
       error.toggleClass(this.visibilityClass);
     }
   }
 
   hideError() {
-    if(this.isErrorState()) {
+    if (this.isErrorState()) {
       this.el
         .removeClass(this.errorClass)
         .next(this.errorTagName)

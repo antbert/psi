@@ -12,9 +12,9 @@ psi-clientlibs
 psi-accounts
 psi-rtc
 psi-modernizr
+psi-profiles
 accounts-google
 service-configuration
 mquandalle:jade
 grigio:babel
-appcache
 underscore
