@@ -134,6 +134,7 @@ $company-page-header-bg-color: #fff;
 .content-block {
   left: percentage(350px / 1280px);
   position: relative;
+  top: 66px;
   width: percentage(930px / 1280px);
 
   @media only screen and (max-width: 64em) {
@@ -150,7 +151,23 @@ $company-page-header-bg-color: #fff;
 .c-header-wrapper {
   background-color: $company-page-header-bg-color;
   box-shadow: 0 1px 1px rgba(34, 34, 34, .35);
+  left: percentage(350px / 1280px);
   min-height: 65px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+
+  // test
+  @media only screen and (max-width: 64em) {
+    left: 0;
+    transition: all .4s ease-in-out;
+    width: 100%;
+  }
+
+  &.active {
+    left: 280px;
+  }
 }
 
 .c-header__list {

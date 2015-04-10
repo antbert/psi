@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Candidates
+    link(rel='stylesheet', href='../app/client/styles/style.css')
+  body.companylist-page
+    header.c-header-wrapper.normal-flow
+      h1.c-header__company-name
+        a(href='#').c-header__name INTERVIEWMAN
+    main(role='main').userpage-content-block
+      section.u-main-content
+        nav.user-nav
+          ul.user-nav__list
+            li.user-nav__list-item
+              a(href='#').user-nav-link My Profile
+            li.user-nav__list-item
+              a(href='#').user-nav-link Vacancies
+            li.user-nav__list-item
+              a(href='#').user-nav-link Follow
+            li.user-nav__list-item
+              a(href='#').user-nav-link Lorem
+            li.user-nav__list-item
+              a(href='#').user-nav-link Ipsum
+        section.search-wrapper
+          div.search-tools
+            div.filter
+              input(type='text', placeholder='job search').input-filter
+            div.filter
+              input(type='text', placeholder='location').input-filter
+            div.filter
+              input(type='text', placeholder='branch').input-filter
+            div.filter
+              input(type='text', placeholder='position').input-filter
+      section.companylist-wrapper
+        div.company-list
+          ul
+            li.company-list__item
+              div.company-list-helper
+                div.company-logo.company-col
+                  img(src='../app/public/images/GitHub-Logo.png').company-logo__img
+                div.company-info.company-col
+                  span.company-location San Francisco
+                div.company-more.company-col
+                  a(href='#').btn.btn-info More
+            li.company-list__item
+              div.company-list-helper
+                div.company-logo.company-col
+                  img(src='../app/public/images/GitHub-Logo.png').company-logo__img
+                div.company-info.company-col
+                  span.company-location San Francisco
+                div.company-more.company-col
+                  a(href='#').btn.btn-info More
