@@ -5,7 +5,7 @@
 $user-page-bg-color: #f9f9f9;
 $info-header-color: #878787;
 
-.u-main-content {
+.user-page {
   background-color: $user-page-bg-color;
 }
 
@@ -17,22 +17,22 @@ $info-header-color: #878787;
 .user-nav__list {
   margin-left: 80px;
   margin-right: 80px;
+  padding: 20px 0;
 }
 
 .user-nav__list-item {
   display: inline-block;
   margin-right: 50px;
-
-  &:hover {
-    border-bottom: 1px solid red;
-  }
 }
 
 .user-nav-link {
   @include font-size(12px);
   color: #000;
-  display: block;
-  padding: 25px 0;
+  padding: 25px 0 21px;
+
+  &:hover {
+    border-bottom: 1px solid red;
+  }
 }
 
 .user-profile-container {
@@ -56,7 +56,7 @@ $info-header-color: #878787;
 .user-button {
   @extend .btn;
   @extend .btn-block;
-  @extend .btn-primary;
+  @extend .btn-info;
   margin-bottom: 10px;
 }
 
