@@ -1,12 +1,16 @@
+// imports
+@import '../utils/index';
+
 // variables
 $user-page-bg-color: #f9f9f9;
+$info-header-color: #878787;
 
 .u-main-content {
   background-color: $user-page-bg-color;
 }
 
 .user-nav {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
   margin-bottom: 40px;
 }
 
@@ -17,22 +21,30 @@ $user-page-bg-color: #f9f9f9;
 
 .user-nav__list-item {
   display: inline-block;
+  margin-right: 50px;
+
+  &:hover {
+    border-bottom: 1px solid red;
+  }
 }
 
 .user-nav-link {
+  @include font-size(12px);
+  color: #000;
   display: block;
-  padding: 20px 0;
+  padding: 25px 0;
 }
 
 .user-profile-container {
   @include clearfix;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: percentage(1130px / 1280px);
 }
 
 .u-avatar-wrapper {
   float: left;
-  width: 200px;
+  width: percentage(200px / 1130px);
 }
 
 .u-avatar {
@@ -52,16 +64,108 @@ $user-page-bg-color: #f9f9f9;
   margin-bottom: 35px;
 }
 
+.u-name__name {
+  @include font-size(24px);
+}
+
 .u-info-section {
   @include clearfix;
 }
 
 .u-info {
   float: left;
-  padding-left: 40px;
+  padding-left: 60px;
+  width: percentage(930px / 1130px);
 }
 
 .col {
   float: left;
-  width: 300px;
+  width: percentage(310px / 930px);
+}
+
+.info-header {
+  @include font-size(10px);
+  color: $info-header-color;
+  margin-bottom: 20px;
+}
+
+.info-section-text {
+  @include font-size(18px);
+  margin-bottom: 30px;
+}
+
+.accordion-tabs-minimal {
+  $base-border-color: gainsboro !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $base-link-color: $action-color !default;
+  $dark-gray: #333 !default;
+  $medium-screen: em(640) !default;
+  $tab-link-color: $dark-gray;
+  $tab-border: 1px solid $base-border-color;
+  $tab-active-background: $base-background-color;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: silver;
+  $tab-mode: $medium-screen;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: percentage(1130px / 1280px);
+
+  @include clearfix;
+  line-height: 1.5;
+  padding: 0;
+
+  li.tab-header-and-content {
+    list-style: none;
+
+    @media screen and (min-width: $tab-mode) {
+      display: inline;
+    }
+  }
+
+  a.tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $tab-link-color;
+    display: block;
+    font-weight: 400;
+    padding: 0.75em 1.618em;
+    text-decoration: none;
+
+    @media screen and (min-width: $tab-mode) {
+      border-top: 0;
+      display: inline-block;
+    }
+
+    &:hover {
+      color: $base-link-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      border-bottom: 0;
+
+      @media screen and (min-width: $tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: 0.75em 1.618em;
+    width: 100%;
+
+    @media screen and (min-width: $tab-mode) {
+      border-top: $tab-border;
+      float: left;
+    }
+  }
 }
