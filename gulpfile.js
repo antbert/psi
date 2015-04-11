@@ -4,6 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
+var jade = require('gulp-jade');
 
 var JS_FILES = [
   'Gulpfile.js',
@@ -13,12 +14,13 @@ var JS_FILES = [
   '!app/packages/meteor-babel/**'
 ];
 
+const SASS_FILES = './app/client/sass/**/*.scss';
 gulp.task('sass', function() {
-  gulp.src('./app/client/sass/*.scss')
+  gulp.src(SASS_FILES)
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
+      browsers: ['last 3 versions', 'ie 8', 'ie 9'],
       cascade: false
     }))
     .pipe(sourcemaps.write('./'))
@@ -36,9 +38,21 @@ gulp.task('jscs', function() {
     .pipe(jscs({esnext: true}));
 });
 
+const JADE_FILES = './statichtml/jade/**/*.jade';
+gulp.task('jade', function() {
+  var YOUR_LOCALS = {};
+  gulp.src(JADE_FILES)
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
+    .pipe(gulp.dest('./statichtml/'))
+});
+
 gulp.task('watch', function() {
-  gulp.watch('./app/client/sass/**/*.scss', ['sass']);
+  gulp.watch(SASS_FILES, ['sass']);
   gulp.watch(JS_FILES, ['jscs', 'jshint']);
+  gulp.watch(JADE_FILES, ['jade']);
 });
 
 gulp.task('qality', ['jshint', 'jscs']);
