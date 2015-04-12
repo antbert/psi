@@ -7,6 +7,7 @@
 meteor-platform
 iron:router
 accounts-password
+psi-core
 psi-clientlibs
 psi-accounts
 psi-rtc

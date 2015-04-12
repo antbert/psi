@@ -46,7 +46,7 @@ gulp.task('jade', function() {
       locals: YOUR_LOCALS,
       pretty: true
     }))
-    .pipe(gulp.dest('./statichtml/'))
+    .pipe(gulp.dest('./statichtml/'));
 });
 
 gulp.task('watch', function() {

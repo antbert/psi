@@ -1,5 +1,3 @@
-//var {cssClasses} = Globals;
-
 Template.loginForm.events({
   'submit form': function loginHandler(event) {
     event.preventDefault(); //stop form submit

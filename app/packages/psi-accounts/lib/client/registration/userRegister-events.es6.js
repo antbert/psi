@@ -1,6 +1,5 @@
 Template.userRegister.events({
   'blur .email-field': function (event) {
-    debugger;
     Validator.validateEmail(event.currentTarget);
   },
 
