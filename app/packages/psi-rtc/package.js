@@ -12,6 +12,10 @@ Package.describe({
 
 Package.onUse(function onUse(api) {
   api.use([
+    'grigio:babel'
+  ]);
+
+  api.use([
     'iron:router',
     'templating'
   ], 'client');
@@ -26,7 +30,7 @@ Package.onUse(function onUse(api) {
     '.npm/package/node_modules/peerjs/dist/peer.js',
     'lib/client/templates/rtc.html',
     'lib/serverConfig.js',
-    'lib/client/templates/rtc.js',
+    'lib/client/templates/rtc.es6.js',
     'lib/client/templates/rtc.helpers.es6.js'
   ], ['client']);
 });

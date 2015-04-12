@@ -1,7 +1,7 @@
-/* global iceServers: true */
+/* global IceServers: true */
 
 var config = {
-  iceServers: iceServers,
+  iceServers: IceServers,
   secure: true,
   debug: 3
 };

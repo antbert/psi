@@ -46,3 +46,9 @@ Package.onUse(function (api) {
     TEMPLATES + '/registration/userRegister-helpers.js'
   ], ['client']);
 });
+
+Package.onTest(function(api) {
+  api.use('tinytest');
+  api.use('psi-accounts');
+  api.addFiles('psi-profiles-tests.js');
+});

@@ -1,9 +1,9 @@
 /**
  * Created by alehatsman on 4/9/15.
  */
-/* global iceServers: true */
+/* global IceServers: true */
 
-iceServers = [{
+IceServers = [{
   url: 'stun:stun01.sipphone.com'
 }, {
   url: 'stun:stun.ekiga.net'
