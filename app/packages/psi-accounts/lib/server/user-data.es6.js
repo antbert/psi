@@ -1,5 +1,6 @@
 /**
- * Created by Aleh_Atsman on 4/10/2015.
+ * By default meteor publish only username, profile.
+ * Use this to add some another fields.
  */
 Meteor.publish('users', function () {
   if(this.userId) {
