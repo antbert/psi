@@ -15,7 +15,11 @@ Package.onUse(function(api) {
     'iron:router'
   ]);
 
-  api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
+  api.use([
+    'minimongo',
+    'mongo-livedata',
+    'templating'
+  ], 'client');
 
   api.addFiles([
     'lib/route-hooks.es6.js',
@@ -23,8 +27,8 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
-    'lib/client/userProfile.html',
-    'lib/client/helpers.es6.js',
+    'lib/client/user-profile/userProfile.html',
+    'lib/client/user-profile/helpers.es6.js',
     'lib/client/userdata-subscription.js'
   ], ['client']);
 });

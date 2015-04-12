@@ -7,8 +7,9 @@ const BODY_CLASS = 'user-page';
 RouteHooks = {
   beforeAction: function beforeAction() {
     if(!Meteor.user()) {
-      this.stop();
-      this.redirect('/login');
+      this.go('/login');
+      this.next();
+      return;
     }
     $(selectors.BODY).addClass(BODY_CLASS);
     this.next();
