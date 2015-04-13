@@ -5,6 +5,10 @@
 $user-page-bg-color: #f9f9f9;
 $info-header-color: #878787;
 
+.user-page {
+  background-color: $user-page-bg-color;
+}
+
 .userpage-content-block {
   position: relative;
   top: 66px;
@@ -14,15 +18,18 @@ $info-header-color: #878787;
   left: 0;
 }
 
-.u-main-content {
-  background-color: $user-page-bg-color;
-  margin-bottom: 40px;
-  box-shadow: 0 1px 1px rgba(34, 34, 34, .35);
-}
-
 .user-nav {
+  background-color: #f9f9f9;
   border-bottom: 1px solid rgba(0, 0, 0, .1);
-  margin-bottom: 40px;
+  left: 0;
+  position: relative;
+  top: 66px;
+  transition: all .3s ease-in-out;
+  //margin-bottom: 40px;
+
+  &.active {
+    left: 280px;
+  }
 }
 
 .user-nav__list {
@@ -46,14 +53,6 @@ $info-header-color: #878787;
     color: #f00;
     border-bottom: 1px solid #f00;
   }
-}
-
-.user-profile-container {
-  @include clearfix;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: percentage(1130px / 1280px);
-  padding-bottom: 30px;
 }
 
 .u-avatar-wrapper {
