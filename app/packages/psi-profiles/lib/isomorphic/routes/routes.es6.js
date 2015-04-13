@@ -6,6 +6,7 @@
 var {userProfile, companyProfile} = RouteHooks;
 
 Router.route('/user', function() {
+  this.layout('hn-template');
   this.render('userProfile');
 }, {
   name: 'current.user.profile',
@@ -14,6 +15,7 @@ Router.route('/user', function() {
 });
 
 Router.route('/user/:_id', function() {
+  this.layout('hn-template');
   this.render('userProfile');
 }, {
   name: 'show.user.profile',
@@ -21,8 +23,11 @@ Router.route('/user/:_id', function() {
   onStop: userProfile.onStop
 });
 
-Router.route('/companyProfile', {
-  template: 'companyProfile',
+Router.route('/company', function() {
+  this.layout('hn-template');
+  this.render('companyProfile');
+}, {
+  name: 'show.company.profile',
   onBeforeAction: companyProfile.beforeAction,
   onStop: companyProfile.onStop
 });

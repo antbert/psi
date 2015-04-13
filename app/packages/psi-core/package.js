@@ -17,8 +17,9 @@ Package.onUse(function(api) {
   api.export('Globals');
 
   api.addFiles([
-    'lib/client/header/header.html',
-    'lib/client/navigation/navigation.html',
-    'lib/client/helpers/user-helpers.js'
+    'lib/client/components/header/header.html',
+    'lib/client/components/navigation/navigation.html',
+    'lib/client/helpers/user-helpers.js',
+    'lib/client/templates/hn-template.html'
   ], ['client']);
 });
