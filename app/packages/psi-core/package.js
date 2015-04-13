@@ -18,6 +18,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib/client/header/header.html',
-    'lib/client/navigation/navigation.html'
+    'lib/client/navigation/navigation.html',
+    'lib/client/helpers/user-helpers.js'
   ], ['client']);
 });

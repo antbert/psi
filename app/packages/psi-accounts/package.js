@@ -32,7 +32,6 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/server/account-service-configuration.js',
     'lib/server/registration-validation.es6.js',
-    'lib/server/user-data.es6.js'
   ], ['server']);
 
   var TEMPLATES = 'lib/client';

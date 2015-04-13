@@ -9,7 +9,8 @@ Package.describe({
 Package.onUse(function onUse(api) {
   api.use([
     'grigio:babel',
-    'psi-core'
+    'psi-core',
+    'underscore'
   ]);
 
   api.use([
@@ -28,7 +29,8 @@ Package.onUse(function onUse(api) {
     'lib/client/templates/rtc.html',
     'lib/serverConfig.js',
     'lib/client/templates/rtc.es6.js',
-    'lib/client/templates/rtc.helpers.es6.js'
+    'lib/client/templates/rtc.helpers.es6.js',
+    'lib/client/rtc/peer.es6.js'
   ], ['client']);
 });
 
