@@ -1,0 +1,42 @@
+<template name="userList">
+  <div>
+    <table class="candidates-table">
+      <thead>
+      <tr>
+        <th></th>
+        <th>NAME</th>
+        <th>VACANCY</th>
+        <th>TEST</th>
+        <th>DATE</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each userList}}
+      <tr>
+        <td class="candidate-table__img-col">
+          <a href="{{userProfileLink _id}}">
+            <img src="{{profile.picture}}" class="candidate-table-img">
+          </a>
+        </td>
+        <td>
+          <a href="{{userProfileLink _id}}">
+            <span class="candidate-table-name">{{profile.name}}</span>
+          </a>
+        </td>
+        <td><span>Android Engineer</span></td>
+        <td><span>9.8</span></td>
+        <td><span>01.04.15</span></td>
+        <td>
+          <select>
+            <option>item1</option>
+            <option>item2</option>
+            <option>item3</option>
+            <option>item4</option>
+          </select>
+        </td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

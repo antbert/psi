@@ -60,7 +60,9 @@ function onPeerCall(call) {
 
 function onPeerDisconnected(peerWrapper) {
   console.log('Peer is disconnected');
-  this.reconnect();
+  if(!this.destroyed) {
+    this.reconnect();
+  }
   if(!this.id) {
     peerWrapper.peer = peerWrapper.createPeer();
   }

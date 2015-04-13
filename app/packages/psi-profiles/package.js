@@ -29,7 +29,12 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/client/user-profile/userProfile.html',
     'lib/client/user-profile/helpers.es6.js',
-    'lib/client/userdata-subscription.js'
+
+    'lib/client/company-profile/companyProfile.html',
+    'lib/client/company-profile/vacancies/vacancies.html',
+    'lib/client/company-profile/user-list/user-list.html',
+    'lib/client/company-profile/user-list/user-list-helpers.es6.js'
+
   ], ['client']);
 });
 

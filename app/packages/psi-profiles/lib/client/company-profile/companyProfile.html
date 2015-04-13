@@ -1,0 +1,69 @@
+<template name="companyProfile">
+  <main role="main" class="content-block">
+    <header class="c-header-wrapper"><a class="aside-toggle-wrapper"><span class="btn-aside-toggle"></span></a>
+      <h1 class="c-header__company-name"><a href="#" class="c-header__name">EPAM<span class="down-arrow nav-menu-toggler">&#9662;</span></a></h1>
+      <nav class="c-header__nav">
+        <ul class="c-header__list">
+          <li class="c-header__list-item"><a href="#" class="c-header-link">CANDIDATES</a></li>
+          <li class="c-header__list-item"><a href="#" class="c-header-link">MESSAGES</a></li>
+          <li class="c-header__list-item"><a href="#" class="c-header-link">VACANCY</a></li>
+          <li class="c-header__list-item"><a href="#" class="c-header-link">SEARCH</a></li>
+        </ul>
+      </nav>
+      <ul class="c-header-settings">
+        <li class="c-header-settings_item"><a href="#"></a></li>
+        <li class="c-header-settings_item"><a href="#"></a></li>
+      </ul>
+    </header>
+    <section class="c-content">
+      <header class="c-content-header">
+        <h1 class="c-content-header__name">Candidates</h1>
+      </header>
+      {{> vacancies}}
+      {{> userList}}
+    </section>
+  </main>
+  <aside class="sideblock">
+    <section class="int-section">
+      <h1 class="int-section__header">INTERVIEWMAN</h1>
+      <ul class="int-section__list">
+        <li class="item green"><span>Interview with Andres Jasso</span></li>
+        <li class="item orange"> <span>Interview with Ian Ruppert</span></li>
+        <li class="item red"> <span>Interview with Bartosz Borowiec</span></li>
+        <li class="item blue"><span>Interview with Scott Chisholm</span></li>
+      </ul>
+    </section>
+    <section class="pay-attention">
+      <h1 class="pay-attention__header">Pay Attention</h1>
+      <figure class="pay-attention__card"><a href="#" class="card-link p-photo-container"><img src="../app/public/images/1.png" class="card-link__photo"></a>
+        <div class="card-container">
+          <h3 class="card-container__header"><span><a href="#" class="card-link">Philippe Francois</a></span></h3>
+          <p><span class="user-skills">WEB-Designer, UI/UX Developer</span></p>
+          <p><span class="user-skills">Earlier worked: GitHub, Google</span></p>
+        </div>
+      </figure>
+    </section>
+    <footer>
+      <ul class="footer-list">
+        <li class="footer-list__item"><a href="#" class="footer-link">PRIVACY</a></li>
+        <li class="footer-list__item"><a href="#" class="footer-link">ABOUT</a></li>
+        <li class="footer-list__item"><a href="#" class="footer-link">CONTACT</a></li>
+        <li class="footer-list__item"><small class="copyright">2015 Interviewman, Inc.</small></li>
+      </ul>
+    </footer>
+  </aside>
+  <script type="text/javascript">
+    document.querySelector( ".aside-toggle-wrapper" )
+        .addEventListener( "click", function() {
+          this.classList.toggle( "active" );
+          document.querySelector( ".sideblock" ).classList.toggle( "active" );
+          document.querySelector( ".content-block" ).classList.toggle( "active" );
+          document.querySelector( ".c-header-wrapper" ).classList.toggle( "active" );
+        });
+
+    document.querySelector('.nav-menu-toggler')
+        .addEventListener('click', function() {
+          document.querySelector('.c-header__nav').classList.toggle('active');
+        });
+  </script>
+</template>
