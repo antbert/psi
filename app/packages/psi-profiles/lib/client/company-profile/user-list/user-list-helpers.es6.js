@@ -7,6 +7,6 @@ Template.userList.helpers({
   },
 
   userProfileLink: function(id) {
-    return '/userProfile/' + id;
+    return '/user/' + id;
   }
 });

@@ -8,10 +8,10 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.1');
   api.use([
+    'iron:router',
     'psi-core',
     'psi-clientlibs',
     'grigio:babel',
-    'underscore',
     'iron:router'
   ]);
 
@@ -23,7 +23,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib/isomorphic/routes/route-hooks.es6.js',
-    'lib/isomorphic/routes/routes.js'
+    'lib/isomorphic/routes/routes.es6.js'
   ]);
 
   api.addFiles([
