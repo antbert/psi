@@ -1,3 +1,5 @@
+/* global RouteHooks: false */
+
 Meteor.startup(function() {
   Router.route('/', {
     name: 'landingRoute',
@@ -7,12 +9,7 @@ Meteor.startup(function() {
   Router.route('/login', {
     name: 'loginRoute',
     template: 'loginForm',
-    onBeforeAction: function() {
-      if (Meteor.user()) {
-        Router.go('/rtc');
-      }
-      this.next();
-    }
+    onBeforeAction: RouteHooks.login.onBeforeAction
   });
 
   Router.route('/register', {

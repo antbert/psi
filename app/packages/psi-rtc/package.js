@@ -1,18 +1,15 @@
 Package.describe({
   name: 'psi-rtc',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
   summary: '',
-  // URL to the Git repository containing the source code for this package.
   git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
 });
 
 Package.onUse(function onUse(api) {
   api.use([
-    'grigio:babel'
+    'grigio:babel',
+    'psi-core'
   ]);
 
   api.use([
@@ -21,8 +18,8 @@ Package.onUse(function onUse(api) {
   ], 'client');
 
   api.addFiles([
-    'lib/hooks.js',
-    'lib/routes.js'
+    'lib/isomorphic/routes/route-hooks.es6.js',
+    'lib/isomorphic/routes/routes.js'
   ]);
 
   api.addFiles([

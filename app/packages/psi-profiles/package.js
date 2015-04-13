@@ -22,8 +22,8 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.addFiles([
-    'lib/route-hooks.es6.js',
-    'lib/routes.js'
+    'lib/isomorphic/routes/route-hooks.es6.js',
+    'lib/isomorphic/routes/routes.js'
   ]);
 
   api.addFiles([

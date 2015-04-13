@@ -11,7 +11,8 @@ Package.onUse(function (api) {
     'grigio:babel',
     'accounts-password',
     'mquandalle:jade',
-    'underscore'
+    'underscore',
+    'psi-core'
   ]);
 
   api.use([
@@ -20,12 +21,12 @@ Package.onUse(function (api) {
 
   api.use([
     'iron:router',
-    'templating',
-    'psi-clientlibs'
+    'templating'
   ], ['client']);
 
   api.addFiles([
-    'lib/routes.js'
+    'lib/isomorphic/routes/route-hooks.es6.js',
+    'lib/isomorphic/routes/routes.js'
   ]);
 
   api.addFiles([
@@ -42,6 +43,8 @@ Package.onUse(function (api) {
     TEMPLATES + '/login/login-events.es6.js',
     TEMPLATES + '/login/login-helpers.js',
     TEMPLATES + '/registration/userRegister.jade',
+    TEMPLATES + '/registration/field.es6.js',
+    TEMPLATES + '/registration/validator.es6.js',
     TEMPLATES + '/registration/userRegister-events.es6.js',
     TEMPLATES + '/registration/userRegister-helpers.js'
   ], ['client']);

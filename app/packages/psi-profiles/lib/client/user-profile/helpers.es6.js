@@ -9,7 +9,7 @@ Template.userProfile.helpers({
   },
   image: function() {
     if(Meteor.user()) {
-      return Meteor.user().services.google.picture;
+      return Meteor.user().profile.picture;
     }
   }
 });
