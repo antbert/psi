@@ -13,12 +13,19 @@
 }
 
 .ui-card {
-  width: 23%;
   border: none;
   border-radius: .2857rem;
   box-shadow: 0 3px 0 0 #d4d4d5,0 0 0 1px #d4d4d5;
   display: inline-block;
   margin-bottom: 2em;
+
+  @media only screen and (min-width: 768px) {
+    width: 48%;
+  }
+
+  @media only screen and (min-width: 1170px) {
+    width: 23%;
+  }
 }
 
 .card-image {
