@@ -1,0 +1,95 @@
+// imports
+@import '../utils/index';
+
+.user-cards {
+  text-align: justify;
+
+  .gap {
+    width: 23%;
+    opacity: 0;
+    height: 0;
+    display: inline-block;
+  }
+}
+
+.ui-card {
+  width: 23%;
+  border: none;
+  border-radius: .2857rem;
+  box-shadow: 0 3px 0 0 #d4d4d5,0 0 0 1px #d4d4d5;
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.card-image {
+  display: block;
+  position: relative;
+  padding: 0;
+  background: rgba(0, 0, 0, .05);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: .2857rem .2857rem 0 0;
+    border: none;
+  }
+}
+
+.card-content {
+  background: 0 0;
+  margin: 0;
+  padding: 1em;
+  box-shadow: none;
+  font-size: 1em;
+  border: none;
+  border-radius: 0;
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-top: -.165em;
+    line-height: 1.33em;
+  }
+
+  .meta {
+    font-size: .9em;
+    color: rgba(0,0,0,.4);
+  }
+
+  .group {
+    color: rgba(0,0,0,.5);
+  }
+
+  .description {
+    @include font-size(14px);
+    margin-top: .5em;
+    text-align: left;
+  }
+}
+
+.card-extra-content {
+  @include font-size(14px);
+  max-width: 100%;
+  min-height: 0!important;
+  position: static;
+  background: 0 0;
+  width: auto;
+  margin: 0;
+  padding: .75em 1em;
+  top: 0;
+  left: 0;
+  color: rgba(0,0,0,.4);
+  box-shadow: none;
+  transition: color .2s ease;
+  border-top: 1px solid rgba(0,0,0,.05);
+
+  .extra-right {
+    float: right;
+    color: rgba(0,0,0,.5);
+  }
+
+  .extra-friends {
+    color: rgba(0,0,0,.5);
+  }
+}
