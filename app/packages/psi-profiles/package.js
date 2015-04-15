@@ -12,7 +12,8 @@ Package.onUse(function(api) {
     'psi-core',
     'psi-clientlibs',
     'grigio:babel',
-    'iron:router'
+    'iron:router',
+    'underscore'
   ]);
 
   api.use([

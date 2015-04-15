@@ -5,23 +5,23 @@
 
 var {userProfile, companyProfile} = RouteHooks;
 
+var config = function(conf) {
+  return _.extend(userProfile, conf);
+}
+
 Router.route('/user', function() {
   this.layout('hn-template');
   this.render('userProfile');
-}, {
-  name: 'current.user.profile',
-  onBeforeAction: userProfile.beforeAction,
-  onStop: userProfile.onStop
-});
+}, config({
+  name: 'current.user.profile'
+}));
 
 Router.route('/user/:_id', function() {
   this.layout('hn-template');
   this.render('userProfile');
-}, {
-  name: 'show.user.profile',
-  onBeforeAction: userProfile.beforeAction,
-  onStop: userProfile.onStop
-});
+}, config({
+  name: 'show.user.profile'
+}));
 
 Router.route('/company', function() {
   this.layout('hn-template');

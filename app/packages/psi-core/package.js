@@ -19,7 +19,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/client/components/header/header.html',
     'lib/client/components/navigation/navigation.html',
+    'lib/client/templates/hn-template.html',
     'lib/client/helpers/user-helpers.js',
-    'lib/client/templates/hn-template.html'
   ], ['client']);
 });
