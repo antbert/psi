@@ -1,0 +1,191 @@
+// variables
+$company-page-header-bg-color: #fff;
+
+.c-header-wrapper {
+  background-color: $company-page-header-bg-color;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .04);
+  //left: percentage(350px / 1280px);
+  height: 65px;
+  left: 0;
+  line-height: 65px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  z-index: 3;
+
+  &.active {
+    left: 280px;
+  }
+}
+
+.navbar-header {
+  float: left;
+  height: 65px;
+  margin-left: 60px;
+}
+
+.c-header__list {
+  height: 65px;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+
+    &:first-child {
+      border-top: 1px solid rgba(0, 0, 0, .15);
+    }
+
+    &:last-child {
+      box-shadow: 0 1px 1px rgba(34, 34, 34, .15);
+    }
+  }
+}
+
+.c-header__list-item {
+  display: inline-block;
+  height: 100%;
+  margin-right: 40px;
+
+  @media only screen and (max-width: 768px) {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    display: block;
+    margin-right: 0;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .05);
+      transition: all .4s ease;
+    }
+  }
+}
+
+.c-header__company-name {
+  display: inline-block;
+  vertical-align: middle;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    float: right;
+  }
+}
+
+.down-arrow {
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: inline;
+  }
+}
+
+.c-header__name {
+  color: #000;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.c-header__nav {
+  display: inline-block;
+  float: left;
+  margin-left: 60px;
+  vertical-align: middle;
+
+  @media only screen and (max-width: 768px) {
+    background-color: #fff;
+    display: none;
+    margin-left: 0;
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    width: 100%;
+  }
+
+  &.active {
+    display: block;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.c-header-link {
+  color: #000;
+  font-size: 12px;
+  padding: 1em 0;
+}
+
+.aside-toggle-wrapper {
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 50px;
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle {
+  background-color: transparent;
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle:before,
+.aside-toggle-wrapper.active .btn-aside-toggle:after {
+  top: 0;
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle:before {
+  transform: rotate(45deg);
+}
+
+.aside-toggle-wrapper.active .btn-aside-toggle:after {
+  transform: rotate(-45deg);
+}
+
+.btn-aside-toggle {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -10px;
+  transition: background-color .3s .3s;
+  background-color: #000;
+}
+
+.btn-aside-toggle:before,
+.btn-aside-toggle:after {
+  background-color: #000;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transition: transform .3s .3s;
+  width: 100%;
+}
+
+.btn-aside-toggle:before {
+  transform: translateY(-6px);
+}
+
+.btn-aside-toggle:after {
+  transform: translateY(6px);
+}
+
+.navbar-btns {
+  float: right;
+  height: 65px;
+  line-height: 75px;
+}
+
+.navbar-btns__item {
+  display: inline-block;
+  height: 100%;
+  margin-right: 15px;
+}
+
+.navbar-ico {
+  svg:hover {
+    fill: #ebc43c;
+  }
+}
