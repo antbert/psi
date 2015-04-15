@@ -1,0 +1,3 @@
+[submodule "app/packages/meteor-modernizr"]
+	path = app/packages/meteor-modernizr
+	url = git@github.com:Atsman/meteor-modernizr.git

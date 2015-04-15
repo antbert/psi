@@ -9,7 +9,7 @@ iron:router
 accounts-password
 psi-clientlibs
 psi-rtc
-psi-modernizr
+meteor-modernizr
 accounts-google
 service-configuration
 mquandalle:jade
