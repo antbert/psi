@@ -1,0 +1,11 @@
+{
+  "feature-detects": [
+    "video",
+    "video/autoplay",
+    "video/loop",
+    "video/preload",
+    "webrtc/datachannel",
+    "webrtc/getusermedia",
+    "webrtc/peerconnection"
+  ]
+}

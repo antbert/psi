@@ -8,8 +8,8 @@ Package.describe({
 
 Package.onUse(function onUse(api) {
   api.addFiles([
-    //'.npm/package/node_modules/normalize.css/normalize.css'
-  ], ['client']);
+    '.npm/package/node_modules/normalize.css/normalize.css'
+  ], 'client');
 });
 
 Npm.depends({

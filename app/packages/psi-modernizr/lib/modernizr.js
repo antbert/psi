@@ -1,5 +1,4 @@
 //see https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json
-
 var config = {
   'feature-detects': [
     'video',

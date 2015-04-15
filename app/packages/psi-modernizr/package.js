@@ -6,20 +6,13 @@ Package.describe({
   documentation: 'README.md'
 });
 
-Package.onUse(function(api) {
-  api.use([
-    'iron:router'
-  ]);
-  api.use([
-    'templating'
-  ], 'client');
-  api.addFiles(['lib/modernizr.js'], 'server');
-  api.addFiles(['lib/modernizr.html'], 'client');
-});
-
-/*Package.onTest(function(api) {
-});*/
-
-Npm.depends({
-  'modernizr': '3.0.0-alpha.3'
+Package.registerBuildPlugin({
+  name: 'modernizeBuild',
+  use: [],
+  sources: [
+    'build.js'
+  ],
+  npmDependencies: {
+    'modernizr': '3.0.0-alpha.3'
+  }
 });
