@@ -33,7 +33,7 @@ function processModernizr(config, handler) {
 
 Plugin.registerSourceHandler('modernizr.json', function (compileStep) {
   var fileContents = loadJSONFile(compileStep);
-  var modernizeFile = processModernizr(fileContents, function(content) {
+  processModernizr(fileContents, function(content) {
     console.log('=> Building modernize...\n');
 
     compileStep.addJavaScript({
