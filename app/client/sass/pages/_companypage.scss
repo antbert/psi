@@ -20,13 +20,6 @@ $company-page-header-bg-color: #fff;
   left: -280px;
   transition: all .3s ease-in-out;
 
-  /*
-  @media only screen and (max-width: 64em) {
-    //left: -27.34375%;
-    left: -280px;
-    transition: all .4s ease-in-out;
-  }*/
-
   &.active {
     left: 0;
     //width: 280px;
@@ -144,13 +137,6 @@ $company-page-header-bg-color: #fff;
   transition: all .3s ease-in-out;
   //width: 100%;
 
-  /*
-  @media only screen and (max-width: 64em) {
-    left: 0;
-    transition: all .4s ease-in-out;
-    width: 100%;
-  }*/
-
   &.active {
     left: 280px;
   }
@@ -158,9 +144,8 @@ $company-page-header-bg-color: #fff;
 
 .c-header-wrapper {
   background-color: $company-page-header-bg-color;
-  //box-shadow: 0 1px 1px rgba(34, 34, 34, .35);
-  border-bottom: 1px solid #DDDDDD;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, .04);
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .04);
   //left: percentage(350px / 1280px);
   height: 65px;
   left: 0;
@@ -168,17 +153,9 @@ $company-page-header-bg-color: #fff;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 3;
-  width: 100%;
   transition: all .3s ease-in-out;
-
-  // test
-  /*
-  @media only screen and (max-width: 64em) {
-    left: 0;
-    transition: all .4s ease-in-out;
-    width: 100%;
-  }*/
+  width: 100%;
+  z-index: 3;
 
   &.active {
     left: 280px;
@@ -209,10 +186,9 @@ $company-page-header-bg-color: #fff;
 
 .c-header__list-item {
   display: inline-block;
-  margin-right: 40px;
   height: 100%;
+  margin-right: 40px;
 
-  // test
   @media only screen and (max-width: 768px) {
     border-bottom: 1px solid rgba(0, 0, 0, .15);
     display: block;
@@ -227,7 +203,6 @@ $company-page-header-bg-color: #fff;
 
 .c-header__company-name {
   display: inline-block;
-  //padding: 14px 35px;
   vertical-align: middle;
 
   @media only screen and (max-width: 768px) {
@@ -246,8 +221,8 @@ $company-page-header-bg-color: #fff;
 
 .c-header__name {
   color: #000;
-  font-weight: 300;
   font-size: 30px;
+  font-weight: 300;
 }
 
 .c-header__nav {
@@ -256,7 +231,6 @@ $company-page-header-bg-color: #fff;
   margin-left: 60px;
   vertical-align: middle;
 
-  // test
   @media only screen and (max-width: 768px) {
     background-color: #fff;
     display: none;
@@ -290,7 +264,6 @@ $company-page-header-bg-color: #fff;
 
 .c-content-header {
   margin-bottom: 20px;
-  //padding: 0 35px;
 }
 
 .c-content-header__name {
@@ -309,18 +282,6 @@ $company-page-header-bg-color: #fff;
   top: 0;
   white-space: nowrap;
   width: 50px;
-
-  /*
-  @media only screen and (min-width: 64.063em) {
-    display: none;
-  }
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-    float: left;
-    position: relative;
-    top: 20px;
-  }*/
 }
 
 .aside-toggle-wrapper.active .btn-aside-toggle {
@@ -348,18 +309,18 @@ $company-page-header-bg-color: #fff;
   margin-top: -1px;
   left: 50%;
   margin-left: -10px;
-  transition: background-color 0.3s 0.3s;
+  transition: background-color .3s .3s;
   background-color: #000;
 }
 
 .btn-aside-toggle:before,
 .btn-aside-toggle:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
   background-color: #000;
-  transition: transform 0.3s 0.3s;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transition: transform .3s .3s;
+  width: 100%;
 }
 
 .btn-aside-toggle:before {
@@ -372,7 +333,6 @@ $company-page-header-bg-color: #fff;
 
 .vacancies-container {
   margin-bottom: 35px;
-  //padding: 0 35px;
 }
 
 .vacancies__item {
@@ -385,15 +345,15 @@ $company-page-header-bg-color: #fff;
 }
 
 .vacancies-label {
+  border-radius: .25em;
+  color: #fff;
   display: inline;
-  padding: .4em .6em .4em;
   font-size: 75%;
   line-height: 1;
-  color: #fff;
+  padding: .4em .6em;
   text-align: center;
-  white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25em;
+  white-space: nowrap;
 }
 
 .label-default {
@@ -418,49 +378,6 @@ $company-page-header-bg-color: #fff;
 
 .label-danger {
   background-color: #d9534f;
-}
-
-// table
-
-.candidates-table {
-  max-width: 100%;
-  width: 100%;
-}
-
-.candidates-table__row {
-  &:nth-child(odd) {
-    background-color: #fff;
-  }
-}
-
-.candidates-table thead {
-  color: #737373;
-  font-size: 11px;
-}
-
-.candidates-table thead th {
-  font-weight: 400;
-  text-align: left;
-}
-
-.candidates-table tbody {
-  font-size: 14px;
-}
-
-.candidate-table__img-col {
-  width: 8%;
-}
-
-.candidate-table-img {
-  border-radius: 50%;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  width: 50px;
-}
-
-.candidate-table-name {
-  color: #000;
-  font-weight: 600;
 }
 
 .navbar-btns {
