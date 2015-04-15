@@ -68,6 +68,7 @@
     </header>
     <nav class="user-nav">
       <ul class="user-nav__list">
+        <li class="user-nav__toggler"><a href="#" class="user-nav__link-toggler">Menu</a></li>
         <li class="user-nav__list-item"><a href="#" class="user-nav-link">My Profile</a></li>
         <li class="user-nav__list-item"><a href="#" class="user-nav-link">Vacancies</a></li>
         <li class="user-nav__list-item"><a href="#" class="user-nav-link">Follow</a></li>
@@ -172,6 +173,11 @@
           document.querySelector( ".c-header-wrapper" ).classList.toggle( "active" );
           document.querySelector( ".user-nav" ).classList.toggle( "active" );
         });
+        
+        document.querySelector( ".user-nav__link-toggler" ).
+          addEventListener( "click", function() {
+            document.querySelector( ".user-nav__list" ).classList.toggle( "active" );
+          });
     </script>
   </body>
 </html>

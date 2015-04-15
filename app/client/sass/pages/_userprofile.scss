@@ -37,11 +37,46 @@ $info-header-color: #878787;
   margin-right: auto;
   max-width: percentage(1130px / 1280px);
   padding: 20px 0;
+
+  &.active {
+    .user-nav__list-item {
+      display: block;
+      text-align: center;
+      margin-right: 0;
+      padding: 0.5em;
+    }
+  }
 }
 
 .user-nav__list-item {
   display: inline-block;
   margin-right: 50px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.user-nav__toggler {
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    text-align: center;
+    padding: 0.5em;
+  }
+}
+
+.icon-arrow-drop-down {
+  width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #f00;
+}
+
+.user-nav__link-toggler {
+  color: #000;
 }
 
 .user-nav-link {
@@ -52,6 +87,10 @@ $info-header-color: #878787;
   &:hover {
     color: #f00;
     border-bottom: 1px solid #f00;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0;
   }
 }
 

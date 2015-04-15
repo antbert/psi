@@ -72,6 +72,8 @@ html(lang='en')
             </svg>
     nav.user-nav
       ul.user-nav__list
+        li.user-nav__toggler
+          a(href='#').user-nav__link-toggler Menu
         li.user-nav__list-item
           a(href='#').user-nav-link My Profile
         li.user-nav__list-item
@@ -197,3 +199,8 @@ html(lang='en')
           document.querySelector( ".c-header-wrapper" ).classList.toggle( "active" );
           document.querySelector( ".user-nav" ).classList.toggle( "active" );
         });
+        
+        document.querySelector( ".user-nav__link-toggler" ).
+          addEventListener( "click", function() {
+            document.querySelector( ".user-nav__list" ).classList.toggle( "active" );
+          });
