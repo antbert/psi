@@ -1,0 +1,19 @@
+<template name="userCard">
+  <li class="ui-card">
+    <div class="card-image">
+      <a href={{pathFor route='show.user.profile'}}>
+        <img src="{{profile.picture}}">
+      </a>
+    </div>
+    <div class="card-content">
+      <h1>{{profile.name}}</h1>
+      <div class="meta"><a href="#" class="group">Front-End</a></div>
+      <div class="description">
+        Стив Джобес — это вымышленный персонаж, напоминающий читателям кого-то.
+      </div>
+    </div>
+    <div class="card-extra-content"><a href="#" class="extra-right">Присоединился в 1998 г.</a>
+      <a href="#" class="extra-friends">22 friends</a>
+    </div>
+  </li>
+</template>

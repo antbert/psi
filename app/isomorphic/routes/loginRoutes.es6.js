@@ -9,7 +9,12 @@ Meteor.startup(function() {
   Router.route('/login', {
     name: 'loginRoute',
     template: 'loginForm',
-    onBeforeAction: RouteHooks.login.onBeforeAction
+    onBeforeAction: function() {
+    if (Meteor.user()) {
+      Router.go('/rtc');
+    }
+    this.next();
+  }
   });
 
   Router.route('/register', {
@@ -17,3 +22,4 @@ Meteor.startup(function() {
     template: 'userRegister'
   });
 });
+

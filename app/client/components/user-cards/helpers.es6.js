@@ -1,12 +1,8 @@
 /**
  * Created by Aleh_Atsman on 4/13/2015.
  */
-Template.userList.helpers({
+Template.userCards.helpers({
   userList: function() {
     return Meteor.users.find();
-  },
-
-  userProfileLink: function(id) {
-    return '/user/' + id;
   }
 });

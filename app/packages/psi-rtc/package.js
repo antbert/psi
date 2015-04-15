@@ -9,7 +9,6 @@ Package.describe({
 Package.onUse(function onUse(api) {
   api.use([
     'grigio:babel',
-    'psi-core',
     'underscore'
   ]);
 
