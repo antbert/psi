@@ -1,4 +1,3 @@
-/* global IceServers: true */
 /* global localPeer: false */
 
 Template.rtc.events({
