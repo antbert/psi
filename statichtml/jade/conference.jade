@@ -87,23 +87,39 @@ html(lang='en')
     main(role='main').content-block
       section.c-content
         div.video-block
-          video(src='../app/public/vid.m4v').remote-video
-          video(src='../app/public/vid.m4v').local-video
+          video(src='../app/public/vid.m4v', autoplay).remote-video
+          video(src='../app/public/vid.m4v', autoplay).local-video
         div.chat-block
-          ol.conversation
-            li.self
-              div.message
-                p.
-                  Talk Talk Talk
-                time(datetime='2009-11-13T20:00') Timothy • 51 min
-            li.other
-              div.chat-avatar-wrapper
-                img(src='../app/public/images/12.png').chat-avatar
-              div.message
-                p.
-                  Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
-                  Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
-                  Talk Talk Talk Talk
-                time(datetime='2009-11-13T20:00') Timothy • 51 min
+          div.conf-wrap
+            ol.conversation
+              li.self
+                div.message
+                  p.
+                    Talk Talk Talk
+                  time(datetime='2009-11-13T20:00') Timothy • 51 min
+              li.other
+                div.chat-avatar-wrapper
+                  img(src='../app/public/images/12.png').chat-avatar
+                div.message
+                  p.
+                    Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
+                    Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
+                    Talk Talk Talk Talk
+                  time(datetime='2009-11-13T20:00') Timothy • 51 min
+              li.self
+                div.message
+                  p.
+                    Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
+                    Talk Talk Talk Talk
+                  time(datetime='2009-11-13T20:00') Timothy • 51 min
+              li.other
+                div.chat-avatar-wrapper
+                  img(src='../app/public/images/12.png').chat-avatar
+                div.message
+                  p.
+                    Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
+                    Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk Talk
+                    Talk Talk Talk Talk
+                  time(datetime='2009-11-13T20:00') Timothy • 51 min
           div.chat-input-area
-            input(type='text').chat-input-area__input
+            input(type='text', placeholder='Send message').chat-input-area__input

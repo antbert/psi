@@ -1,0 +1,26 @@
+// imports
+@import '../utils/index';
+
+.remote-video {
+  width: 100%;
+}
+
+.local-video {
+  border: 3px solid rgba(0, 0, 0, .15);
+  bottom: 20px;
+  position: absolute;
+  right: 20px;
+  width: 20%;
+}
+
+.video-block {
+  float: left;
+  margin-right: 5%;
+  position: relative;
+  width: 65%;
+
+  @media only screen and (max-width: 1170px) {
+    float: none;
+    width: 100%;
+  }
+}
