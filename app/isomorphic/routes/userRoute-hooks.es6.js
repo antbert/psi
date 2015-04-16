@@ -3,13 +3,8 @@
  */
 /* global RouteHooks: true */
 var {selectors} = Globals;
-const USER_PROFILE_BODY_CLASS = 'user-page',
-      COMPANY_PROFILE_BODY_CLASS = 'company-page';
-
-RouteHooks = {
-  userProfile : createClassChanger(USER_PROFILE_BODY_CLASS),
-  companyProfile: createClassChanger(COMPANY_PROFILE_BODY_CLASS)
-};
+const USER_PROFILE_BODY_CLASS = 'user-page';
+const COMPANY_PROFILE_BODY_CLASS = 'company-page';
 
 function createClassChanger(className) {
   return {
@@ -22,3 +17,8 @@ function createClassChanger(className) {
     }
   };
 }
+
+RouteHooks = {
+  userProfile : createClassChanger(USER_PROFILE_BODY_CLASS),
+  companyProfile: createClassChanger(COMPANY_PROFILE_BODY_CLASS)
+};

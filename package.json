@@ -3,20 +3,11 @@
   "version": "0.0.1",
   "description": "Pseudointerview the project helps you to prepare to job interview.",
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "istanbul cover node_modules/mocha/bin/_mocha tests",
-    "dev": "grunt; nodemon index.js"
   },
   "dependencies": {},
   "devDependencies": {
     "autoprefixer-core": "5.1.7",
     "csswring": "3.0.1",
-    "grunt": "latest",
-    "grunt-contrib-jade": "latest",
-    "grunt-contrib-sass": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-postcss": "latest",
-    "grunt-scss-lint": "^0.3.4",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-jscs": "^1.4.0",

@@ -1,7 +1,7 @@
 /**
  * Created by Aleh_Atsman on 4/13/2015.
  */
-/* global Validator: true */
+/* global Validator: true, Field */
 
 class ValidatorUtil {
   static isFormValid({username, email, password}) {

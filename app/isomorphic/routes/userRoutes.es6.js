@@ -7,19 +7,18 @@ var {userProfile, companyProfile} = RouteHooks;
 
 var config = function(conf) {
   return _.extend(userProfile, conf);
-}
+};
 
-Router.route('/user', function() {
+function userHandler() {
   this.layout('hn-template');
   this.render('userProfile');
-}, config({
+}
+
+Router.route('/user', userHandler, config({
   name: 'current.user.profile'
 }));
 
-Router.route('/user/:_id', function() {
-  this.layout('hn-template');
-  this.render('userProfile');
-}, config({
+Router.route('/user/:_id', userHandler, config({
   name: 'show.user.profile'
 }));
 
