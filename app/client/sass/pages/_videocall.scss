@@ -1,143 +1,163 @@
+// imports
+@import '../utils/index';
+
 // variables
 $bg-color: #1b1b1b;
 $header-font-color: #fff;
 $chat-bg-color: #f5f5f5;
 $send-btn-color: #5e6dc1;
 
-.videocall-body {
-  background-color: $bg-color;
-}
-
-.header {
-  background-image: linear-gradient(to bottom, #4a5bb9 50%, #4051b5 90%);
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .35);
-  color: $header-font-color;
-  padding-bottom: 13px;
-  padding-top: 13px;
-}
-
-.candidate-name {
-  font-weight: 100;
-  text-align: center;
-}
-
-.l-video {
-  height: calc(100% - 219px);
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 70.3125%;
-}
-
 .remote-video {
-  height: 100%;
-  position: absolute;
   width: 100%;
 }
 
 .local-video {
   border: 3px solid rgba(0, 0, 0, .15);
   bottom: 20px;
-  height: 100px;
   position: absolute;
   right: 20px;
-  width: 180px;
+  width: 20%;
 }
 
-.l-chat {
-  background-color: $chat-bg-color;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
+// ----------------------------------NEW VIDEO CONFERENCE
+
+.video-block {
+  width: 65%;
+  float: left;
+  position: relative;
+  margin-right: 5%;
+
+  @media only screen and (max-width: 1170px) {
+    float: none;
+    width: 100%;
+  }
 }
 
-.chat-area {
-  height: 140px;
-  overflow-y: auto;
+.chat-block {
+  width: 250px;
+  float: left;
+  height: 315px;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 2px;
+  background-color: #f9f9f9;
+  position: relative;
+
+  @media only screen and (max-width: 1170px) {
+    width: 100%;
+  }
 }
 
-.chat-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 70.3125%;
+.conversation {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 50px 0; // finality
+  li {
+    padding: .5em;
+    overflow: hidden;
+    position: relative;
+  }
+  .chat-avatar-wrapper {
+    width: 25px; // stronger than %
+    height: 25px;
+    // could set height, but gonna bottom-align instead
+    position: relative; // for triangle
+
+    img {
+      display: block; // triangle position
+      width: 100%;
+      border-radius: 2px;
+    }
+  }
 }
 
-.input-message {
-  border-bottom: 0 !important;
-  height: 30px;
-  width: 100%;
+.other {
+  .chat-avatar-wrapper {
+    position: absolute;
+    bottom: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  .message {
+    background-color: #fff;
+    color: #000;
+
+    &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 5px 5px 5px 0;
+        border-color: transparent #B6B6B6;
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: -5px;
+        bottom: 8px;
+    }
+  }
+}
+
+.self {
+  .chat-avatar-wrapper {
+    float: right;
+    margin-top: 17px;
+  }
+
+  .message {
+    float: right;
+    background-color: #dae3ed;
+    color: #000;
+
+    &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-color: transparent #B6B6B6;
+        display: block;
+        width: 0;
+        z-index: 1;
+        right: -5px;
+        bottom: 8px;
+    }
+  }
 }
 
 .message {
-  margin-bottom: 10px;
-}
-
-.username {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.candidate-color {
-  color: #53bd5b;
-}
-
-.interviewman-color {
-  color: #d5c154;
-}
-
-.message-body {
-  font-size: 18px;
-}
-
-.message-time {
-  margin-right: 10px;
-}
-
-.nl-msg {
-  margin-left: 50px;
-}
-
-.input-group {
-  border-collapse: separate;
-  display: table;
+  margin-left: 33px;
+  //max-width: 178px;
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(black, .2);
   position: relative;
+
+  p {
+    font-size: 0.8rem;
+    margin: 0 0 0.2rem 0;
+  }
+
+  time {
+    font-size: 0.7rem;
+    color: #878787;
+  }
+
+  @media only screen and (max-width: 1170px) {
+    max-width: 400px;
+  }
 }
 
-.input-group-btn {
-  display: table-cell;
-  font-size: 0;
-  position: relative;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 1%;
-}
+.chat-input-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(0, 0, 0, .1);
 
-.chat-btn {
-  display: inline-block;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-}
-
-.send-btn {
-  background-color: $send-btn-color;
-  color: #fff;
-}
-
-//-----------------
-
-.conference-wrapper {
-  position: relative;
-  min-height: 100%;
-  height: 100%;
+  .chat-input-area__input {
+    width: 100%;
+    display: block;
+    min-height: 35px;
+    padding: 0 20px;
+  }
 }
