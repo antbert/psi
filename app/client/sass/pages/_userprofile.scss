@@ -24,9 +24,8 @@ $info-header-color: #878787;
 }
 
 .u-avatar {
-  border-radius: 50%;
+  border-radius: 3px;
   margin-bottom: 20px;
-  width: 200px;
 }
 
 .user-button {
@@ -37,7 +36,9 @@ $info-header-color: #878787;
 }
 
 .u-name {
-  margin-bottom: 35px;
+  //margin-bottom: 35px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .u-name__name {
@@ -50,98 +51,143 @@ $info-header-color: #878787;
 
 .u-info {
   float: left;
-  padding-left: 60px;
+  //padding-left: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
   width: percentage(930px / 1130px);
+}
+
+.row {
+  @include clearfix;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.no-bottom-line {
+    border-bottom: none;
+  }
 }
 
 .col {
   float: left;
-  width: percentage(310px / 930px);
+  padding-right: 15px;
+  padding-left: 15px;
+  //width: percentage(310px / 930px);
 }
 
-.info-header {
-  @include font-size(10px);
-  color: $info-header-color;
-  margin-bottom: 20px;
+.left-col {
+  width: 60%;
+  //margin-right: 35px;
 }
 
-.info-section-text {
-  @include font-size(18px);
-  margin-bottom: 30px;
+.right-col {
+  float: right;
+  padding-left: 15px;
+  padding-right: 15px; 
 }
 
-.accordion-tabs-minimal {
-  $base-border-color: gainsboro !default;
-  $base-background-color: white !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $base-link-color: $action-color !default;
-  $dark-gray: #333 !default;
-  $medium-screen: em(640) !default;
-  $tab-link-color: $dark-gray;
-  $tab-border: 1px solid $base-border-color;
-  $tab-active-background: $base-background-color;
-  $tab-inactive-color: $base-background-color;
-  $tab-inactive-hover-color: silver;
-  $tab-mode: $medium-screen;
+.rc-table {
+  @include font-size(14px);
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
 
-  margin-left: auto;
-  margin-right: auto;
-  max-width: percentage(1130px / 1280px);
+.rc-table__col {
+  padding: .5em;
+}
 
+.short-info {
+  @include font-size(14px);
+  color: darkgrey;
+  font-weight: 300;
+}
+
+.place {
+  margin-right: 15px;
+}
+
+.p-about {
+  @include font-size(14px);
+  margin-top: 15px;
+}
+
+.col-exp {
+  width: 50%;
+}
+
+.p-content-head {
+  font-weight: 400;
+}
+
+.row-exp-skill {
   @include clearfix;
-  line-height: 1.5;
-  padding: 0;
+  padding-top: 40px;
+}
 
-  li.tab-header-and-content {
-    list-style: none;
+.exp-list__item {
+  @include font-size(14px);
+  padding: .8em;
+}
 
-    @media screen and (min-width: $tab-mode) {
-      display: inline;
-    }
-  }
+.exp-content {
+  margin-top: 20px;
+}
 
-  a.tab-link {
-    background-color: $tab-inactive-color;
-    border-top: $tab-border;
-    color: $tab-link-color;
-    display: block;
-    font-weight: 400;
-    padding: 0.75em 1.618em;
-    text-decoration: none;
+.exp-vacancy {
+  margin-right: 5px;
+  color: #207cca;
+}
 
-    @media screen and (min-width: $tab-mode) {
-      border-top: 0;
-      display: inline-block;
-    }
+.exp-company {
+  margin-left: 5px;
+  margin-right: 10px;
+  color: #207cca;
+}
 
-    &:hover {
-      color: $base-link-color;
-    }
+.exp-timeline {
+  @include font-size(12px);
+  color: darkgrey;
+}
 
-    &:focus {
-      outline: none;
-    }
+.col-skill {
+  width: 50%;
+}
 
-    &.is-active {
-      border-bottom: 0;
+.skill-content {
+  margin-top: 20px;
+}
 
-      @media screen and (min-width: $tab-mode) {
-        border: $tab-border;
-        border-bottom-color: $tab-active-background;
-        margin-bottom: -1px;
-      }
-    }
-  }
+.skill-list__name {
+  @include font-size(14px);
+}
 
-  .tab-content {
-    display: none;
-    padding: 0.75em 1.618em;
-    width: 100%;
+.skill-list__progress {
+  height: 15px;
+  box-shadow: none;
+  background-color: #F0F0F0;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
 
-    @media screen and (min-width: $tab-mode) {
-      border-top: $tab-border;
-      float: left;
-    }
-  }
+.progress-bar {
+  width: 90%;
+  line-height: 15px;
+  height: 100%;
+}
+
+.progress-green {
+  background-color: #5cb85c;
+}
+
+.progress-red {
+  background-color: #d9534f;
+}
+
+.progress-blue {
+  background-color: #5bc0de;
+}
+
+.progress-orange {
+  background-color: #f0ad4e;
 }

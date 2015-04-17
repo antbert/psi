@@ -15,7 +15,7 @@ html(lang='en')
         li.navbar-btns__item
           a(href='#').navbar-ico.
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 width="20px" height="20px" fill="#9c9c9c" viewBox="0 0 30.239 30.239" style="enable-background:new 0 0 30.239 30.239;"
+                 width="20px" height="20px" fill="#d3d3d3" viewBox="0 0 30.239 30.239" style="enable-background:new 0 0 30.239 30.239;"
                  xml:space="preserve">
               <g>
                 <path d="M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735
@@ -28,7 +28,7 @@ html(lang='en')
         li.navbar-btns__item
           a(href='#').navbar-ico.
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 width="20px" height="20px" fill="#9c9c9c" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+                 width="20px" height="20px" fill="#d3d3d3" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
               <g>
                 <g>
                   <path d="M30,16.011c0-4.176-4.391-7.562-9.807-7.562c-0.098,0-0.193,0.001-0.289,0.004c2.102,1.668,3.396,3.944,3.396,6.454
@@ -43,7 +43,7 @@ html(lang='en')
         li.navbar-btns__item
           a(href='#').navbar-ico.
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              	 width="20px" height="20px" fill="#9c9c9c" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+              	 width="20px" height="20px" fill="#d3d3d3" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
               <g>
               	<g id="notifications">
               		<path d="M255,510c28.05,0,51-22.95,51-51H204C204,487.05,226.95,510,255,510z M420.75,357V216.75
@@ -55,7 +55,7 @@ html(lang='en')
         li.navbar-btns__item
           a(href='#').navbar-ico.
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 width="20px" height="20px" fill="#9c9c9c" viewBox="0 0 507.451 507.45" style="enable-background:new 0 0 507.451 507.45;"
+                 width="20px" height="20px" fill="#d3d3d3" viewBox="0 0 507.451 507.45" style="enable-background:new 0 0 507.451 507.45;"
                  xml:space="preserve">
               <g>
                 <g id="settings">
@@ -86,7 +86,7 @@ html(lang='en')
       section.c-content.u-main-content
         div.u-avatar-wrapper
           img(src='../app/public/images/12.png').u-avatar
-          a(href='#').user-button MESSAGE
+          a(href='#').user-button VIDEO CALL
           a(href='#').user-button JOB OFFER
         div.u-info
           header.u-name
@@ -98,68 +98,79 @@ html(lang='en')
               span.star
               span.star
           section.u-info-section
-            div.col.col-1
-              ul
-                li 
-                  h1.info-header Location
-                  p.info-section-text London, Great Britan
-                li 
-                  h1.info-header Skills
-                  p.info-section-text WEB-Design, UI/UX
-                li 
-                  h1.info-header Experience
-                  p.info-section-text 10 Years
-            div.col.col-2
-              ul
-                li 
-                  h1.info-header Location
-                  p.info-section-text London, Great Britan
-                li 
-                  h1.info-header Skills
-                  p.info-section-text WEB-Design, UI/UX
-                li 
-                  h1.info-header Experience
-                  p.info-section-text 10 Years
-            div.col.col-3
-              h1.info-header About
-              p.info-section-text
-                | London, Great Britan London, Great Britan London, Great Britan
-                | London, Great Britan London, Great Britan London, Great Britan
-      section.secondary-menu  
-        ul.accordion-tabs-minimal
-          li.tab-header-and-content
-            a(href='#').tab-link.is-active Earlier worked
-            div.tab-content
-              p test
-          li.tab-header-and-content
-            a(href='#').tab-link Ipsum
-            div.tab-content
-              p test
-          li.tab-header-and-content
-            a(href='#').tab-link Badges
-            div.tab-content
-              p test
-          li.tab-header-and-content
-            a(href='#').tab-link Elit
-            div.tab-content
-              p test
-    script(type='text/javascript').
-      $(document).ready(function () {
-        $('.accordion-tabs-minimal').each(function(index) {
-          $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
-        });
-
-        $('.accordion-tabs-minimal').on('click', 'li > a', function(event) {
-          if (!$(this).hasClass('is-active')) {
-            event.preventDefault();
-            var accordionTabs = $(this).closest('.accordion-tabs-minimal');
-            accordionTabs.find('.is-open').removeClass('is-open').hide();
-
-            $(this).next().toggleClass('is-open').toggle();
-            accordionTabs.find('.is-active').removeClass('is-active');
-            $(this).addClass('is-active');
-          } else {
-            event.preventDefault();
-          }
-        });
-      });
+            div.row
+              div.col.left-col
+                span.dob.short-info Jan 22, 1984
+                br
+                span.place.short-info United States, Los Angeles
+                span.p-email.short-info sally@interviewman.com
+                p.p-about.
+                  Lorem Ipsum is simply dummy text of the printing
+                  and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown printer
+                  took a galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries,
+              div.col.right-col
+                table.rc-table
+                  tr.rc-table__row
+                    td.rc-table__col Status
+                    td.rc-table__col Active
+                  tr.rc-table__row
+                    td.rc-table__col Rating
+                    td.rc-table__col 5 stars
+                  tr.rc-table__row
+                    td.rc-table__col Member since
+                    td.rc-table__col Jan 07, 2014
+            div.row.no-bottom-line
+              div.row-exp-skill
+                div.col-exp.col
+                  h1.p-content-head EXPERIENCE
+                  div.exp-content
+                    ul.exp-list
+                      li.exp-list__item
+                        span
+                          a(href='#').exp-vacancy CEO
+                          |at
+                          a(href='#').exp-company Interviewman.co
+                          span.exp-timeline
+                            span.exp-time March 2014 ~ Now
+                      li.exp-list__item
+                        span
+                          a(href='#').exp-vacancy CEO
+                          |at
+                          a(href='#').exp-company Interviewman.co
+                          span.exp-timeline
+                            span.exp-time March 2014 ~ Now
+                      li.exp-list__item
+                        span
+                          a(href='#').exp-vacancy CEO
+                          |at
+                          a(href='#').exp-company Interviewman.co
+                          span.exp-timeline
+                            span.exp-time March 2014 ~ Now
+                      li.exp-list__item
+                        span
+                          a(href='#').exp-vacancy CEO
+                          |at
+                          a(href='#').exp-company Interviewman.co
+                          span.exp-timeline
+                            span.exp-time March 2014 ~ Now
+                div.col-skill.col
+                  h1.p-content-head SKILLS
+                  div.skill-content
+                    div.skill-list
+                      div.skill-list__name HTML5
+                      div.skill-list__progress
+                        div.progress-bar.progress-green
+                    div.skill-list
+                      div.skill-list__name CSS3
+                      div.skill-list__progress
+                        div.progress-bar.progress-red
+                    div.skill-list
+                      div.skill-list__name JavaScript
+                      div.skill-list__progress
+                        div.progress-bar.progress-blue
+                    div.skill-list
+                      div.skill-list__name JQuery
+                      div.skill-list__progress
+                        div.progress-bar.progress-orange
