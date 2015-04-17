@@ -24,15 +24,17 @@ $info-header-color: #878787;
 }
 
 .u-avatar {
-  border-radius: 3px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .user-button {
+  @include font-size(12px);
   @extend .btn;
   @extend .btn-block;
   @extend .btn-info;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .u-name {
@@ -43,6 +45,7 @@ $info-header-color: #878787;
 
 .u-name__name {
   @include font-size(24px);
+  font-weight: 400;
 }
 
 .u-info-section {
