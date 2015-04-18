@@ -62,21 +62,14 @@
   }
 
   .meta {
-    //font-size: .9em;
-    color: rgba(0,0,0,.4);
+    color: darkgrey;
 
     //test
     @include font-size(12px);
-    float: left;
   }
 
   .group {
     color: rgba(0,0,0,.5);
-
-    //test
-    color: #fff;
-    border-radius: 5px;
-    padding: .2em .5em;
   }
 
   .description {
@@ -127,8 +120,10 @@
 
 .test-score {
   float: right;
+  font-weight: bold;
 }
 
 .test-text {
   float: right;
+  margin-right: 5px;
 }

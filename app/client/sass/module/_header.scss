@@ -1,3 +1,6 @@
+// imports
+@import '../utils/index';
+
 // variables
 $company-page-header-bg-color: #fff;
 
@@ -28,6 +31,7 @@ $company-page-header-bg-color: #fff;
   margin-right: auto;
   max-width: 88.28125%;
   height: 50px;
+  position: relative;
 }
 
 .navbar-header {
@@ -38,6 +42,13 @@ $company-page-header-bg-color: #fff;
   //test
   height: 50px;
   line-height: 50px;
+
+  //test 1
+  margin-right: 40px;
+
+  @media only screen and (max-width: 950px) {
+    float: none;
+  }
 }
 
 .c-header__list {
@@ -210,12 +221,35 @@ $company-page-header-bg-color: #fff;
   //test
   height: 50px;
   line-height: 60px;
+
+  //test 1
+  margin-right: 45px;
+
+  @media only screen and (max-width: 950px) {
+    float: none;
+    text-align: center;
+    height: inherit;
+    line-height: inherit;
+    margin-right: 0;
+  }
 }
 
 .navbar-btns__item {
   display: inline-block;
   height: 100%;
   margin-right: 15px;
+
+  @media only screen and (max-width: 950px) {
+    display: block;
+    margin-right: 0;
+    padding: 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .01);
+    }
+  }
 }
 
 .navbar-ico {
@@ -226,9 +260,14 @@ $company-page-header-bg-color: #fff;
 
 //test
 .acc-photo {
-  float: right;
+  //float: right;
   height: 50px;
   line-height: 70px;
+
+  //test
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .acc-photo__img {
@@ -238,14 +277,50 @@ $company-page-header-bg-color: #fff;
 }
 
 .header-nav {
+  //float: left;
+  //margin-left: 40px;
+
+  //test
+  @include clearfix;
+
+  @media only screen and (max-width: 950px) {
+    background-color: #fff;
+    display: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-top: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.header-nav__list {
   float: left;
-  margin-left: 40px;
+
+  @media only screen and (max-width: 950px) {
+    float: none;
+    text-align: center;
+  }
 }
 
 .header-nav__list-item {
   display: inline-block;
   height: 50px;
   line-height: 50px;
+
+  @media only screen and (max-width: 950px) {
+    display: block;
+    height: inherit;
+    line-height: inherit;
+    padding: 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .01);
+    }
+  }
 }
 
 .header-nav__link {

@@ -2,10 +2,7 @@
 @import '../utils/index';
 
 .search-wrapper {
-  padding: 2em;
-}
-
-.search-tools {
+  padding: 2em 0;
   @include clearfix;
   margin-left: auto;
   margin-right: auto;
