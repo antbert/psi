@@ -1,10 +1,5 @@
-.companylist-page {
-  //background-color: #f9f9f9;
-}
-
-.normal-flow {
-  left: 0;
-}
+// imports
+@import '../utils/index';
 
 .search-wrapper {
   padding: 2em;
@@ -29,30 +24,62 @@ input.input-filter {
 }
 
 .companylist-wrapper {
-  background-color: #fff;
-}
-
-.company-list {
   margin-left: auto;
   margin-right: auto;
-  max-width: percentage(1130px / 1280px);
+  max-width: 88.28125%;
 }
 
 .company-list__item {
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-.company-list-helper {
   @include clearfix;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .company-col {
   float: left;
-  width: percentage(310px / 1130px);
 }
 
-.company-logo__img {
-  width: 100px;
+.company-logo {
+  padding: 1em;
+  width: 20%;
+}
+
+.company-info {
+  padding: 1em;
+  width: 80%;
+}
+
+.company-head {
+  @include clearfix;
+}
+
+.company-head__name {
+  float: left;
+}
+
+.company-head__btn {
+  @extend .btn;
+  @extend .btn-primary;
+  float: right;
+}
+
+.company-site {
+  @include font-size(13px);
+  color: blue;
+  margin-left: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.company-location {
+  @include font-size(13px);
+  color: darkgrey;
+}
+
+.company-body__about {
+  @include font-size(14px);
+  margin-top: 10px;
 }

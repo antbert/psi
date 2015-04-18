@@ -249,9 +249,9 @@ $company-page-header-bg-color: #fff;
 }
 
 .header-nav__link {
+  @include font-size(12px);
   color: #000;
   padding: 1em;
-  font-size: 13px;
 
   &:hover {
     color: red;
