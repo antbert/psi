@@ -132,10 +132,13 @@ $company-page-header-bg-color: #fff;
   //left: percentage(350px / 1280px);
   left: 0;
   position: relative;
-  top: 66px;
+  //top: 66px;
   //width: percentage(930px / 1280px);
   transition: all .3s ease-in-out;
   //width: 100%;
+
+  //test
+  top: 50px;
 
   &.active {
     left: 280px;
