@@ -256,6 +256,23 @@ $company-page-header-bg-color: #fff;
   svg:hover {
     fill: #ebc43c;
   }
+
+  &.img-replace {
+    @include font-size(0px);
+    overflow: hidden;
+    text-indent: 100%;
+    color: transparent;
+    white-space: nowrap;
+  }
+
+  .hide-svg {
+    display: none;
+  }
+
+  &.show-text {
+    @include font-size(12px);
+    color: #000;
+  }
 }
 
 //test
@@ -332,3 +349,4 @@ $company-page-header-bg-color: #fff;
     color: red;
   }
 }
+

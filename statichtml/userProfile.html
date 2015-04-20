@@ -18,7 +18,8 @@
             <li class="header-nav__list-item"><a href="#" class="header-nav__link">SEARCH</a></li>
           </ul>
           <ul class="navbar-btns">
-            <li class="navbar-btns__item"><a href="#" class="navbar-ico">
+            <li class="navbar-btns__item"><a href="#" class="navbar-ico img-replace">
+                SEARCH
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="16px" height="16px" fill="#d3d3d3" viewBox="0 0 30.239 30.239" style="enable-background:new 0 0 30.239 30.239;"
                    xml:space="preserve">
@@ -30,7 +31,8 @@
                     C21.517,9.026,21.517,14.63,18.073,18.074z"/>
                 </g>
                 </svg></a></li>
-            <li class="navbar-btns__item"><a href="#" class="navbar-ico">
+            <li class="navbar-btns__item"><a href="#" class="navbar-ico img-replace">
+                MESSAGES
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="16px" height="16px" fill="#d3d3d3" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
                 <g>
@@ -44,7 +46,8 @@
                   </g>
                 </g>
                 </svg></a></li>
-            <li class="navbar-btns__item"><a href="#" class="navbar-ico">
+            <li class="navbar-btns__item"><a href="#" class="navbar-ico img-replace">
+                ACTIONS
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="16px" height="16px" fill="#d3d3d3" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
                 <g>
@@ -55,7 +58,8 @@
                   </g>
                 </g>
                 </svg></a></li>
-            <li class="navbar-btns__item"><a href="#" class="navbar-ico">
+            <li class="navbar-btns__item"><a href="#" class="navbar-ico img-replace">
+                SETTINGS
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="16px" height="16px" fill="#d3d3d3" viewBox="0 0 507.451 507.45" style="enable-background:new 0 0 507.451 507.45;"
                    xml:space="preserve">
@@ -161,17 +165,22 @@
       </section>
     </main>
     <div class="modal">
-      <div class="modal-container"><span class="modal-close-btn"></span>
+      <div class="modal-container"><a href="#" class="modal-close-btn"></a>
         <form class="set-date-form">
-          <div class="icon">
-            <label class="c-form-label">Set Date:</label>
-            <input type="date" name="calendar" class="c-input">
-          </div>
-          <div class="icon">
-            <label class="c-form-label">Set Time:</label>
-            <input type="text" name="time" class="c-input">
-          </div>
-          <input type="submit" value="Send" class="set-date-form__btn">
+          <fieldset class="c-form-fieldset u-fieldset">
+            <legend class="form-section-legend">Set Interview Date:</legend>
+            <div class="icon">
+              <label class="c-form-label">Interview Date:</label>
+              <input type="date" name="calendar" class="c-input">
+            </div>
+            <div class="icon">
+              <label class="c-form-label">Interview Time:</label>
+              <input type="text" name="time" class="c-input">
+            </div>
+            <div class="submit-wrapper">
+              <input type="submit" value="Send" class="c-btn-submit">
+            </div>
+          </fieldset>
         </form>
       </div>
     </div>
@@ -179,12 +188,31 @@
       document.querySelector( ".acc-photo-link" ).
           addEventListener( "click", function() {
             document.querySelector( ".header-nav" ).classList.toggle( "active" );
+            var svgElements = document.getElementsByTagName('svg');
+            var testElements = document.querySelectorAll('.navbar-ico');
+      
+            for(var i = 0; i < svgElements.length; i++) {
+              svgElements[i].classList.toggle('hide-svg');
+              testElements[i].classList.toggle('show-text');
+            }
           });
       
       document.querySelector('.set-interview-date').
         addEventListener('click', function() {
           document.querySelector('.modal').classList.toggle('is-visible');
-          });
+        });
+      
+      document.querySelector('.modal-close-btn').
+        addEventListener('click', function() {
+          document.querySelector('.modal').classList.remove('is-visible');
+        });
+      
+      document.querySelector('.modal-close-btn').
+        addEventListener('keyup', function(event) {
+          if(event.keyCode === 27) {
+            document.querySelector('.modal').classList.remove('is-visible');
+          }
+        });
     </script>
   </body>
 </html>
