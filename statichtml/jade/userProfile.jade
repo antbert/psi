@@ -90,6 +90,7 @@ html(lang='en')
           img(src='../app/public/images/12.png').u-avatar
           a(href='#').user-button.video-call-btn VIDEO CALL
           a(href='#').user-button JOB OFFER
+          a(href='#').user-button.set-interview-date SET INTERVIEW DATE
         div.u-info
           header.u-name
             h1.u-name__name Sally Flores
@@ -176,8 +177,20 @@ html(lang='en')
                       div.skill-list__name JQuery
                       div.skill-list__progress
                         div.progress-bar.progress-orange
+    div.modal
+      div.modal-container
+        span.modal-close-btn
+        form.set-date-form
+          p Set Date: 
+            input(type='date', name='calendar')
+          input(type='submit', value='Send').set-date-form__btn
     script(type='text/javascript').
       document.querySelector( ".acc-photo-link" ).
           addEventListener( "click", function() {
             document.querySelector( ".header-nav" ).classList.toggle( "active" );
+          });
+
+      document.querySelector('.set-interview-date').
+        addEventListener('click', function() {
+          document.querySelector('.modal').classList.toggle('is-visible');
           });

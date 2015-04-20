@@ -111,6 +111,9 @@ html(lang='en')
               div.icon
                 label.c-form-label Email:
                 input(type='text', name='company-email').company-email.c-input
+              div.icon
+                label.c-form-label Description
+                textarea(name='description', required).c-description.c-input
             fieldset.c-form-fieldset
               legend.form-section-legend Address Info:
               div.icon
@@ -124,3 +127,8 @@ html(lang='en')
                 input(type='text', name='founding-date').founding-date.c-input
               div.submit-wrapper
                 input(type='submit', value='Register').c-btn-submit
+    script(type='text/javascript').
+      document.querySelector( ".acc-photo-link" ).
+          addEventListener( "click", function() {
+            document.querySelector( ".header-nav" ).classList.toggle( "active" );
+          });

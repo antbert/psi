@@ -112,6 +112,10 @@
                 <label class="c-form-label">Email:</label>
                 <input type="text" name="company-email" class="company-email c-input">
               </div>
+              <div class="icon">
+                <label class="c-form-label">Description</label>
+                <textarea name="description" required class="c-description c-input"></textarea>
+              </div>
             </fieldset>
             <fieldset class="c-form-fieldset">
               <legend class="form-section-legend">Address Info:</legend>
@@ -135,5 +139,11 @@
         </div>
       </section>
     </main>
+    <script type="text/javascript">
+      document.querySelector( ".acc-photo-link" ).
+          addEventListener( "click", function() {
+            document.querySelector( ".header-nav" ).classList.toggle( "active" );
+          });
+    </script>
   </body>
 </html>

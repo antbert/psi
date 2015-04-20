@@ -71,3 +71,9 @@
     cursor: pointer;
   }
 }
+
+.c-description {
+  min-height: 200px;
+  resize: vertical;
+  overflow: auto;
+}

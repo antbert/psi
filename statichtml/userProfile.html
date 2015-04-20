@@ -79,7 +79,7 @@
     </header>
     <main role="main" class="content-block">
       <section class="c-content u-main-content">
-        <div class="u-avatar-wrapper"><img src="../app/public/images/12.png" class="u-avatar"><a href="#" class="user-button video-call-btn">VIDEO CALL</a><a href="#" class="user-button">JOB OFFER</a></div>
+        <div class="u-avatar-wrapper"><img src="../app/public/images/12.png" class="u-avatar"><a href="#" class="user-button video-call-btn">VIDEO CALL</a><a href="#" class="user-button">JOB OFFER</a><a href="#" class="user-button set-interview-date">SET INTERVIEW DATE</a></div>
         <div class="u-info">
           <header class="u-name">
             <h1 class="u-name__name">Sally Flores</h1><span class="rating"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></span>
@@ -160,10 +160,25 @@
         </div>
       </section>
     </main>
+    <div class="modal">
+      <div class="modal-container"><span class="modal-close-btn"></span>
+        <form class="set-date-form">
+          <p>Set Date: 
+            <input type="date" name="calendar">
+          </p>
+          <input type="submit" value="Send" class="set-date-form__btn">
+        </form>
+      </div>
+    </div>
     <script type="text/javascript">
       document.querySelector( ".acc-photo-link" ).
           addEventListener( "click", function() {
             document.querySelector( ".header-nav" ).classList.toggle( "active" );
+          });
+      
+      document.querySelector('.set-interview-date').
+        addEventListener('click', function() {
+          document.querySelector('.modal').classList.toggle('is-visible');
           });
     </script>
   </body>
