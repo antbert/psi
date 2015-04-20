@@ -1,0 +1,73 @@
+// imports
+@import '../utils/index';
+
+.c-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.c-form-fieldset {
+  margin: 24px 0;
+  border: 0;
+}
+
+.form-section-legend {
+  @include font-size(16px);
+  width: 100%;
+  display: block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ecf0f1;
+  font-weight: 500;
+}
+
+.error-msg {
+  margin-top: 10px;
+  margin-bottom: 28px;
+  display: none;
+
+  p {
+    @include font-size(13px);
+    background: #e94b35;
+    color: #ffffff;
+    text-align: center;
+    border-radius: .25em;
+    padding: 10px;
+  }
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.icon {
+  margin: 15px 0;
+
+  .c-form-label {
+    @include font-size(13px);
+  }
+}
+
+.c-input {
+  border: 1px solid #cfd9db !important;
+  padding: 8px !important;
+  width: 100%;
+
+  &:focus {
+      outline: none;
+      border-color: #2c97de;
+      box-shadow: 0 0 5px rgba(#2c97de, .2);
+    }
+}
+
+.submit-wrapper {
+  @include clearfix;
+
+  .c-btn-submit {
+    @extend .btn;
+    @extend .btn-info;
+    float: right;
+    border: 0;
+    cursor: pointer;
+  }
+}
