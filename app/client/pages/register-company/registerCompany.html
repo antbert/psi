@@ -1,0 +1,43 @@
+<template name="registerCompany">
+  <main role="main" class="content-block">
+    <section class="c-content">
+      <div class="register-wrap">
+        <form class="c-form">
+          <fieldset class="c-form-fieldset">
+            <legend class="form-section-legend">Company Info:</legend>
+            <div class="error-msg is-visible">
+              <p>Please enter a valid email address!</p>
+            </div>
+            <div class="icon">
+              <label class="c-form-label">Full name:</label>
+              <input type="text" name="company-name" class="company-name c-input">
+            </div>
+            <div class="icon">
+              <label class="c-form-label">Founding date:</label>
+              <input type="text" name="founding-date" class="founding-date c-input">
+            </div>
+            <div class="icon">
+              <label class="c-form-label">Country of origin:</label>
+              <p>
+                <select class="cof c-input">
+                  <option value="blr">Belarus</option>
+                  <option value="rus">Russia</option>
+                  <option value="usa">United States</option>
+                </select>
+              </p>
+            </div>
+            <div class="icon">
+              <label class="c-form-label">Email:</label>
+              <input type="text" name="company-email" class="company-email c-input">
+            </div>
+          </fieldset>
+          <fieldset class="c-form-fieldset">
+            <div class="submit-wrapper">
+              <input type="submit" value="Register" class="c-btn-submit">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+</template>

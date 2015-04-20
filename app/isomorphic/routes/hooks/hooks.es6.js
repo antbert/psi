@@ -1,7 +1,5 @@
-/**
- * Created by Aleh_Atsman on 4/10/2015.
- */
 /* global RouteHooks: true */
+
 var {selectors} = Globals;
 const USER_PROFILE_BODY_CLASS = 'user-page';
 const COMPANY_PROFILE_BODY_CLASS = 'company-page';

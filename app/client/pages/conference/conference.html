@@ -1,0 +1,53 @@
+<template name="conference">
+  <main role="main" class="content-block">
+    <section class="c-content">
+      <div class="video-block">
+        <video src="../app/public/vid.m4v" autoplay class="remote-video"></video>
+        <video src="../app/public/vid.m4v" autoplay class="local-video"></video>
+      </div>
+    </section>
+  </main>
+  <div class="chat-block">
+    <div class="chat-wrap">
+      <div class="conf-wrap">
+        <ol class="conversation">
+          <li class="self">
+            <div class="message">
+              <p>Hello, how are you?</p>
+              <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+            </div>
+          </li>
+          <li class="other">
+            <div class="chat-avatar-wrapper"><img src="../app/public/images/12.png" class="chat-avatar"></div>
+            <div class="message">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+            </div>
+          </li>
+          <li class="self">
+            <div class="message">
+              <p>It is a long established fact that a reader will be distracted</p>
+              <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+            </div>
+          </li>
+          <li class="other">
+            <div class="chat-avatar-wrapper"><img src="../app/public/images/12.png" class="chat-avatar"></div>
+            <div class="message">
+              <p>Contrary to popular belief</p>
+              <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" placeholder="Send message" class="chat-input-area__input">
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    document.querySelector(".acc-photo-link").
+        addEventListener("click", function() {
+          document.querySelector(".header-nav").classList.toggle("active");
+        });
+  </script>
+</template>

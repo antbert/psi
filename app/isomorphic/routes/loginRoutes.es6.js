@@ -7,9 +7,9 @@ Router.route('/login', {
   name: 'loginRoute',
   template: 'loginForm',
   onBeforeAction: function() {
-    if(Meteor.user()) {
+    /*if(Meteor.user()) {
       Router.go('/rtc');
-    }
+    }*/
     this.next();
   }
 });
