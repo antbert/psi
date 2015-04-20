@@ -181,8 +181,12 @@ html(lang='en')
       div.modal-container
         span.modal-close-btn
         form.set-date-form
-          p Set Date: 
-            input(type='date', name='calendar')
+          div.icon
+            label.c-form-label Set Date:
+            input(type='date', name='calendar').c-input
+          div.icon
+            label.c-form-label Set Time:
+            input(type='text', name='time').c-input
           input(type='submit', value='Send').set-date-form__btn
     script(type='text/javascript').
       document.querySelector( ".acc-photo-link" ).
